@@ -4,6 +4,19 @@
 
 ---
 
+## 📖 Glossary (Oh Hell)
+- **Trump:** the suit of the card turned up after the deal; any trump beats any non-trump card.
+- **Side card / side Ace / side King:** a card NOT in the trump suit (spades trump → A♥, A♦, A♣ are side Aces).
+- **Trump honor:** Ace, King or Queen of trump.
+- **Made your bid:** during play, you've already won as many tricks as you bid. From now on every extra trick = 0 points, so play to LOSE.
+- **Need:** tricks you still have to win = bid − tricks won so far.
+- **Second seat:** the second player to play to a trick (right after the leader).
+- **Master:** the highest card of a suit still outstanding (K♦ becomes master once A♦ is played).
+- **Void / shows out:** a player has no cards of a suit; you learn it when they can't follow suit. A void player can trump that suit.
+- **Shed / dump:** get rid of a dangerous (high) card on a trick it can't win.
+
+---
+
 ## ♠ OH HELL
 
 ### Before the first deal, ask

@@ -10,3 +10,5 @@ lam=1.0 (both opponents)                             hero 0.313±0.014 (par .333
 lam=1.5 (both opponents)                             hero 0.289±0.015 (par .333) | next-team 0.359 far-team 0.352 draw 0.000 | by slot 0.31/0.29/0.27 | turns 82 [3000 g, 87.8s]
 lam=2.0 (both opponents)                             hero 0.264±0.014 (par .333) | next-team 0.377 far-team 0.358 draw 0.000 | by slot 0.29/0.28/0.22 | turns 87 [3000 g, 88.9s]
 lam_next=1.0 lam_far=0.5                             hero 0.338±0.014 (par .333) | next-team 0.277 far-team 0.384 draw 0.000 | by slot 0.36/0.33/0.32 | turns 72 [3000 g, 83.6s]
+lam_next=1.25 lam_far=0.5                            hero 0.324±0.014 (par .333) | next-team 0.261 far-team 0.414 draw 0.001 | by slot 0.35/0.33/0.29 | turns 73 [3000 g, 82.4s]
+lam_next=1.0 lam_far=0.25                            hero 0.334±0.014 (par .333) | next-team 0.236 far-team 0.429 draw 0.000 | by slot 0.37/0.33/0.30 | turns 69 [3000 g, 65.8s]

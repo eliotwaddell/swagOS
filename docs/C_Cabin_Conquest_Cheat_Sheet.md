@@ -9,6 +9,13 @@
 ### Before the first deal, ask
 Misses = 0 or negative? · Hook on? · Zero worth 10? · Must-trump rule? *(Any "no" changes the count; see Doc A §1.)*
 
+### Our table: 1→7→1, exact = 10 + bid, miss = 0
+- **Bidding is ~the whole game** in ≤7-card hands (smart card play adds only ~7 pts/game here).
+- **Never overbid:** one too many = 5% wins vs 19% for one too few.
+- **Zero is your most common right answer** (41% of hands, made 77%).
+- Third bidder has the best seat (69% exact); dealer the worst (60%). Work out the hook number before you count.
+*[Mental count on 1→7→1: 50% wins vs 25% par (4p); 56% (3p), 38% (5p), 25% (6p, par 17%).]*
+
 ### The count (20 seconds, in quarters)
 | | 1–2 cards | 3–5 cards | 6–10 cards |
 |---|---|---|---|
@@ -71,7 +78,7 @@ Count your sure winners vs need. Keep the card most likely to be *beaten* if you
 3. **Your partner's chips are your chips.** Extend the *team's* best line. *[Ignoring teammate: 41%.]*
 4. **Center beats edge. Value = how many 5-lines pass through the square.** The center 2×2 (2♥ 3♥ 4♥ 5♥) ends up in finished sequences 37% of the time; edges ~4%. *[r = 0.96.]*
 5. **Best cards: middle hearts (2♥–9♥) and inner clubs (2♣–6♣). Worst: spades.** Dump edge cards when nothing central is playable.
-6. **Build forks:** a chip that makes two threes (or a three and a four) on different lines. Value lines 1 : 3 : 9 : 27 for 1–2–3–4 chips. *[Beat flatter and steeper scales.]*
+6. **Build forks:** a chip that makes two threes (or a three and a four) on different lines. Think of a line's value as roughly tripling per chip (1 : 3 : 9 : 27 for 1–2–3–4 chips): two new threes (+6 each) beat one new three; one new four (+18) still beats two new threes. *[Tripling scored 53% vs the 1:4:16:80 baseline; much steeper scales or ignoring single chips lost; doubling was not clearly different. Doc B §3.3.]*
 7. **Always block a live enemy open four.** Early on, ~1 in 3 chance the next opponent can finish it; ~1 in 2 that one of them can. Count outs first: no copies left and no wild jacks → it's dead, ignore it.
 8. **Don't over-defend.** A lone enemy three can wait; a three crossing another enemy line cannot. *[Blocking all threes hard: 42%.]*
 9. **Second sequence: reuse one chip.** Look for a line through an *end* chip of your first sequence.

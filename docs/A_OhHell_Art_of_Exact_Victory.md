@@ -46,10 +46,10 @@ All numbers are 4-player games (hands 10→1→10, 19 deals), standard scoring (
 
 **House-rule questions that materially change strategy:**
 
-1. **Scoring for misses.** Zero (baseline) vs negative per trick off. Negative scoring makes underbidding and zero bids much better and bold bids worse.
+1. **Scoring for misses.** Zero (baseline, and **your table's rule**: exact = 10 + bid, miss = 0) vs negative per trick off. Negative scoring makes underbidding and zero bids much better and bold bids worse.
 2. **Is the hook on?** With no hook the dealer's edge disappears and totals can be exact. That makes contested hands rarer and slightly overbidding safer.
 3. **Exact zero worth 10 or 5?** At 5, the zero-bid advantage (finding 4) disappears; bid 1 on marginal hands instead.
-4. **Hand pattern** (10→1→10, 1→10→1, or only up). It doesn't change per-hand play, but more big hands means more variance and more value from card play.
+4. **Hand pattern** (10→1→10, 1→10→1, or only up). **Your table plays 1→7→1: see §8.** It doesn't change per-hand play, but more big hands means more variance and more value from card play.
 5. **Trump rotation / fixed trump / no-trump hands.** Our mental count assumes a turned-up trump.
 6. **Must-trump rule** (must ruff if void). It removes the ducking-by-discard option, so zero bids get harder.
 7. **Bid changes / simultaneous bidding.** Simultaneous bidding removes the position effects in §2.4.
@@ -270,7 +270,41 @@ Notes:
 
 ---
 
-## 8. Reproduce
+## 8. YOUR TABLE: 1 → 7 → 1, exact = 10 + bid, miss = 0
+
+Your scoring is exactly the baseline used everywhere in this document (exact bid = 10 + bid, so 10 for a zero, 11 for 1, ...; any miss = 0). The only difference is the hand pattern: **1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1** (13 hands). Re-run with `python -m ohhell.run_171 400` and `python -m ohhell.diag_171`.
+
+**Ladder vs club players (4 players, 1,600 games each, par 25%):**
+
+| Hero | 1→7→1 win rate | pts/game vs avg | (10→1→10 for comparison) |
+|---|---|---|---|
+| Trick hog (count A/K, always win) | 9.6% ± 1.3 | −16.1 | 2.9% |
+| Same bids, play to the bid | 31.4% ± 1.8 | +4.0 | 33.6% |
+| **Mental count** (x.5 rounds up) | **50.0% ± 2.3** | **+14.8** | 49.4% |
+| Mental count, x.5 rounds down | 45.7% ± 2.3 | +13.2 | 45.0% |
+| Calibrated bidder | 52.3% ± 2.4 | +16.0 | 55.0% |
+| Calibrated **+1** (overbid) | **5.2% ± 1.1** | **−20.5** | 12.7% |
+| Calibrated −1 (underbid) | 18.6% ± 1.5 | −3.9 | 19.9% |
+| Monte Carlo bidder | 54.4% ± 2.4 | +17.8 | 63.0% |
+| Club bids + PIMC card play | 33.4% ± 1.7 | +6.8 | 51.2% |
+| Monte Carlo bids + PIMC play | 64.2% ± 2.4 | +23.8 | 81.8% |
+
+Mental count at other table sizes (1→7→1): 3 players 55.8% (par 33%), 5 players 37.9% (par 20%), 6 players 24.9% (par 17%).
+
+**What changes with 1→7→1:**
+
+1. **Bidding is now almost the whole game.** Card-play skill is worth much less: simulation-quality play adds +6.8 pts/game here vs +20.4 on 10→1→10. With ≤7 cards there are few tricks to maneuver in. *Spend your mental effort on the bid.*
+2. **Overbidding is even deadlier**: one-too-many drops you to 5% wins (−20.5 pts/game) vs 19% for one-too-few. **When in doubt, go lower, always.**
+3. **Zero is the workhorse bid.** The Monte Carlo bidder bid zero on **41%** of all hands (vs 28% on 10→1→10) and made it **77%** of the time. EV: zero 7.7 vs bid-1 6.4 (58%) vs bid-2 6.1 (51%) vs bid-3 6.1 (47%).
+4. **Small hands are 6 of your 13 deals** (two each of 1, 2, 3 cards). The 1–2 card rule (count only trumps; side Aces are ~worthless) now covers 4 of 13 hands. Get it right every time.
+5. **The mental count works unchanged.** At 6–7 cards apply the −½ tax; the −1 tax never comes up.
+6. **Seat effect is larger:** exact rate by bidding position: 1st 61%, 2nd 65%, **3rd 69%**, dealer 60%. The dealer's hook costs most in small hands (with 1 card the hook often *forces* a specific bid). As dealer on a 1–2 card hand, compute what's forbidden *before* looking at your hand's details.
+
+**Exact-bid rates by hand size (Monte Carlo bidder, 5,200 hands):** 1 card 77%, 2: 71%, 3: 67%, 4: 62%, 5: 59%, 6: 52%, 7: 54%.
+
+---
+
+## 9. Reproduce
 
 ```
 python -m ohhell.test_engine

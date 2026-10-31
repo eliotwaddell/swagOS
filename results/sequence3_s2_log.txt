@@ -5,3 +5,8 @@ human-model vs tuned                                 hero 0.166±0.013 (par .333
 tuned vs human-model                                 hero 0.564±0.017 (par .333) | next-team 0.212 far-team 0.221 draw 0.003 | by slot 0.59/0.56/0.54 | turns 97 [3000 g, 33.0s]
 lam=0.0 (both opponents)                             hero 0.311±0.014 (par .333) | next-team 0.328 far-team 0.361 draw 0.000 | by slot 0.34/0.31/0.28 | turns 61 [3000 g, 37.9s]
 lam=0.25 (both opponents)                            hero 0.340±0.014 (par .333) | next-team 0.321 far-team 0.339 draw 0.000 | by slot 0.37/0.34/0.30 | turns 65 [3000 g, 74.3s]
+lam=0.5 (both opponents)                             hero 0.335±0.014 (par .333) | next-team 0.333 far-team 0.333 draw 0.000 | by slot 0.37/0.33/0.31 | turns 70 [3000 g, 77.8s]
+lam=1.0 (both opponents)                             hero 0.313±0.014 (par .333) | next-team 0.346 far-team 0.341 draw 0.000 | by slot 0.35/0.32/0.27 | turns 76 [3000 g, 81.0s]
+lam=1.5 (both opponents)                             hero 0.289±0.015 (par .333) | next-team 0.359 far-team 0.352 draw 0.000 | by slot 0.31/0.29/0.27 | turns 82 [3000 g, 87.8s]
+lam=2.0 (both opponents)                             hero 0.264±0.014 (par .333) | next-team 0.377 far-team 0.358 draw 0.000 | by slot 0.29/0.28/0.22 | turns 87 [3000 g, 88.9s]
+lam_next=1.0 lam_far=0.5                             hero 0.338±0.014 (par .333) | next-team 0.277 far-team 0.384 draw 0.000 | by slot 0.36/0.33/0.32 | turns 72 [3000 g, 83.6s]

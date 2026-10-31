@@ -138,8 +138,8 @@ class Game:
         self.player = (self.player + 1) % self.np
 
 
-def play_game(agents, rng, max_turns=400, observer=None, n_teams=2):
-    g = Game(rng, n_players=len(agents), n_teams=n_teams)
+def play_game(agents, rng, max_turns=400, observer=None, n_teams=2, seqs_to_win=None):
+    g = Game(rng, n_players=len(agents), n_teams=n_teams, seqs_to_win=seqs_to_win)
     for a in agents:
         if hasattr(a, "reset"):
             a.reset()

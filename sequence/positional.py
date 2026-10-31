@@ -10,6 +10,8 @@ from .board import N, WINDOWS, WINDOWS_THROUGH, CORNER_IDX, BOARD, POS
 from .engine import play_game
 from .agents import Greedy
 
+import os
+SEQS = int(os.environ["SEQS"]) if "SEQS" in os.environ else None
 T_SNAP = 16   # snapshot after 16 plies (4 cards per player)
 
 
@@ -36,7 +38,8 @@ def _w(args):
                 snap["cells"] = list(g.cells)
         np_ = 4 if nt == 2 else 6
         kw = {} if nt == 2 else dict(W=(0, 1, 3, 9, 27, 0), jack2=100, lam=0.75)
-        g = play_game([Greedy(seed=s * np_ + i, **kw) for i in range(np_)], random.Random(s), observer=obs, n_teams=nt)
+        g = play_game([Greedy(seed=s * np_ + i, **kw) for i in range(np_)], random.Random(s), observer=obs, n_teams=nt,
+                      seqs_to_win=SEQS)
         if g.winner is None or "cells" not in snap:
             continue
         games += 1
@@ -55,7 +58,7 @@ def _w(args):
 if __name__ == "__main__":
     G = int(sys.argv[1]) if len(sys.argv) > 1 else 4000
     NT = int(sys.argv[2]) if len(sys.argv) > 2 else 2
-    tag = "" if NT == 2 else "3team_"
+    tag = ("" if NT == 2 else "3team_") + ("s2_" if (NT == 3 and SEQS == 2) else "")
     win, win_w = combinatorial()
     chunks = [list(range(k, G, 16)) for k in range(16)]
     with Pool(4) as p:

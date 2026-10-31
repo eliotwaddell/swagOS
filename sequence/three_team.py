@@ -1,10 +1,13 @@
-"""2v2v2 Sequence (6 players, 3 teams of 2, 5 cards each, 1 sequence wins).
-python -m sequence.three_team [n_seeds] [part]
+"""2v2v2 Sequence (6 players, 3 teams of 2, 5 cards each). Sequences to win: env SEQS (default 1 = official;
+set SEQS=2 for the common house rule). python -m sequence.three_team [n_seeds] [part]
 Each seed is played 3 times with the hero team in seating slot 0, 1, 2 (same shuffle); villains fill the
 other two teams. Par win rate = 1/3. CIs are over seeds (the 3 rotated games averaged)."""
 import sys, json, math, random, time
 from multiprocessing import Pool
+import os
 import numpy as np
+SEQS = int(os.environ.get("SEQS", "1"))
+TAG = "" if SEQS == 1 else "s2_"
 from .engine import play_game
 from .experiments import build
 from .board import N, CORNER_IDX
@@ -21,7 +24,7 @@ def _worker(args):
         res = []
         for slot in range(3):
             ags = [build(hero if seat % 3 == slot else villain, s * 11 + seat) for seat in range(6)]
-            g = play_game(ags, random.Random(s), n_teams=3)
+            g = play_game(ags, random.Random(s), n_teams=3, seqs_to_win=SEQS)
             w = g.winner
             # who won relative to hero: 0 hero, 1 team moving right after hero, 2 team moving after that, 3 draw
             rel = 3 if w is None else (w - slot) % 3
@@ -53,7 +56,7 @@ def match3(hero, villain, n_seeds=600, label=""):
 
 
 def save(name, obj):
-    json.dump(obj, open(f"results/sequence3_{name}.json", "w"), indent=1, default=float)
+    json.dump(obj, open(f"results/sequence3_{TAG}{name}.json", "w"), indent=1, default=float)
 
 
 if __name__ == "__main__":

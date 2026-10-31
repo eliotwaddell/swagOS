@@ -1,0 +1,56 @@
+[
+ {
+  "label": "cal/PIMC own-score vs club",
+  "hero": {
+   "bidder": "cal",
+   "player": "pimc",
+   "play_kw": {
+    "objective": "own"
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.7604166666666666,
+  "win_ci95": 0.023580260464525823,
+  "mean_score": 136.79833333333335,
+  "score_ci95": 1.290164381075897,
+  "score_diff": 42.60250000000003,
+  "diff_ci95": 1.5549444508258863,
+  "exact_rate": 0.6367982456140358,
+  "exact_ci95": 0.005865374298764648,
+  "secs": 148.7
+ },
+ {
+  "label": "cal/PIMC spoiling vs club",
+  "hero": {
+   "bidder": "cal",
+   "player": "pimc",
+   "play_kw": {
+    "objective": "relative"
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.79875,
+  "win_ci95": 0.02398059514902051,
+  "mean_score": 137.5125,
+  "score_ci95": 1.3331993665627593,
+  "score_diff": 44.84611111111112,
+  "diff_ci95": 1.6502712289395371,
+  "exact_rate": 0.6395614035087722,
+  "exact_ci95": 0.006013796873670189,
+  "secs": 157.9
+ }
+]

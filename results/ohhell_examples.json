@@ -1,0 +1,270 @@
+[
+ {
+  "desc": "10 cards, 3 trumps incl. A, side A+K",
+  "hand": "AS 7S 3S AH 9H 4H KD 8D 6C 2C",
+  "upcard": "5S",
+  "pos": 0,
+  "prior": [],
+  "forbidden": null,
+  "results": {
+   "0": {
+    "p_exact": 0.0,
+    "ev": 0.0
+   },
+   "1": {
+    "p_exact": 0.302,
+    "ev": 3.33
+   },
+   "2": {
+    "p_exact": 0.43,
+    "ev": 5.16
+   },
+   "3": {
+    "p_exact": 0.487,
+    "ev": 6.34
+   },
+   "4": {
+    "p_exact": 0.417,
+    "ev": 5.84
+   },
+   "5": {
+    "p_exact": 0.105,
+    "ev": 1.57
+   }
+  },
+  "best": 3,
+  "mental": 3.25
+ },
+ {
+  "desc": "10 cards, long weak trumps (5 small)",
+  "hand": "9S 7S 5S 4S 2S QH 8H 6D 3C 2C",
+  "upcard": "TS",
+  "pos": 0,
+  "prior": [],
+  "forbidden": null,
+  "results": {
+   "0": {
+    "p_exact": 0.007,
+    "ev": 0.07
+   },
+   "1": {
+    "p_exact": 0.043,
+    "ev": 0.47
+   },
+   "2": {
+    "p_exact": 0.19,
+    "ev": 2.28
+   },
+   "3": {
+    "p_exact": 0.45,
+    "ev": 5.85
+   },
+   "4": {
+    "p_exact": 0.22,
+    "ev": 3.08
+   },
+   "5": {
+    "p_exact": 0.075,
+    "ev": 1.12
+   }
+  },
+  "best": 3,
+  "mental": 2.75
+ },
+ {
+  "desc": "10 cards, no trumps, two side Aces",
+  "hand": "AH 8H 5H AD 9D 4D 2D QC 7C 3C",
+  "upcard": "KS",
+  "pos": 0,
+  "prior": [],
+  "forbidden": null,
+  "results": {
+   "0": {
+    "p_exact": 0.885,
+    "ev": 8.85
+   },
+   "1": {
+    "p_exact": 0.958,
+    "ev": 10.53
+   },
+   "2": {
+    "p_exact": 0.775,
+    "ev": 9.3
+   },
+   "3": {
+    "p_exact": 0.06,
+    "ev": 0.78
+   },
+   "4": {
+    "p_exact": 0.003,
+    "ev": 0.04
+   },
+   "5": {
+    "p_exact": 0.0,
+    "ev": 0.0
+   }
+  },
+  "best": 1,
+  "mental": 0.5
+ },
+ {
+  "desc": "5 cards, trump K + side A, first to bid",
+  "hand": "KS 6S AH 7D 4C",
+  "upcard": "2S",
+  "pos": 0,
+  "prior": [],
+  "forbidden": null,
+  "results": {
+   "0": {
+    "p_exact": 0.04,
+    "ev": 0.4
+   },
+   "1": {
+    "p_exact": 0.27,
+    "ev": 2.97
+   },
+   "2": {
+    "p_exact": 0.463,
+    "ev": 5.55
+   },
+   "3": {
+    "p_exact": 0.265,
+    "ev": 3.45
+   },
+   "4": {
+    "p_exact": 0.022,
+    "ev": 0.32
+   },
+   "5": {
+    "p_exact": 0.0,
+    "ev": 0.0
+   }
+  },
+  "best": 2,
+  "mental": 2.5
+ },
+ {
+  "desc": "5 cards, same hand, dealer after bids 2,2,1 (hook forbids 0)",
+  "hand": "KS 6S AH 7D 4C",
+  "upcard": "2S",
+  "pos": 3,
+  "prior": [
+   2,
+   2,
+   1
+  ],
+  "forbidden": 0,
+  "results": {
+   "1": {
+    "p_exact": 0.225,
+    "ev": 2.48
+   },
+   "2": {
+    "p_exact": 0.52,
+    "ev": 6.24
+   },
+   "3": {
+    "p_exact": 0.26,
+    "ev": 3.38
+   },
+   "4": {
+    "p_exact": 0.015,
+    "ev": 0.21
+   },
+   "5": {
+    "p_exact": 0.0,
+    "ev": 0.0
+   }
+  },
+  "best": 2,
+  "mental": 2.1875
+ },
+ {
+  "desc": "3 cards, side K-Q-J (no trump)",
+  "hand": "KH QD JC",
+  "upcard": "5S",
+  "pos": 0,
+  "prior": [],
+  "forbidden": null,
+  "results": {
+   "0": {
+    "p_exact": 0.417,
+    "ev": 4.17
+   },
+   "1": {
+    "p_exact": 0.407,
+    "ev": 4.48
+   },
+   "2": {
+    "p_exact": 0.142,
+    "ev": 1.71
+   },
+   "3": {
+    "p_exact": 0.013,
+    "ev": 0.16
+   }
+  },
+  "best": 1,
+  "mental": 0.0
+ },
+ {
+  "desc": "1 card: a side Ace, first to lead",
+  "hand": "AH",
+  "upcard": "5S",
+  "pos": 0,
+  "prior": [],
+  "forbidden": null,
+  "results": {
+   "0": {
+    "p_exact": 0.6,
+    "ev": 6.0
+   },
+   "1": {
+    "p_exact": 0.4,
+    "ev": 4.4
+   }
+  },
+  "best": 0,
+  "mental": 0.0
+ },
+ {
+  "desc": "1 card: a side Ace, dealer (leads last)",
+  "hand": "AH",
+  "upcard": "5S",
+  "pos": 3,
+  "prior": [
+   0,
+   0,
+   0
+  ],
+  "forbidden": 1,
+  "results": {
+   "0": {
+    "p_exact": 0.865,
+    "ev": 8.65
+   }
+  },
+  "best": 0,
+  "mental": 0.0
+ },
+ {
+  "desc": "1 card: low trump (4 of trumps), first to lead",
+  "hand": "4S",
+  "upcard": "5S",
+  "pos": 0,
+  "prior": [],
+  "forbidden": null,
+  "results": {
+   "0": {
+    "p_exact": 0.485,
+    "ev": 4.85
+   },
+   "1": {
+    "p_exact": 0.515,
+    "ev": 5.67
+   }
+  },
+  "best": 1,
+  "mental": 0.75
+ }
+]

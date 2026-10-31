@@ -1,0 +1,19 @@
+MC zero bids: n=2099 success=0.764
+  high cards (A,K any; trump J+) = 0: success 0.79 (n=1426)
+  high cards (A,K any; trump J+) = 1: success 0.73 (n=602)
+  high cards (A,K any; trump J+) = 2: success 0.65 (n=69)
+  high cards (A,K any; trump J+) = 3: success 0.00 (n=2)
+  trumps held = 0: success 0.80 (n=1604)
+  trumps held = 1: success 0.65 (n=438)
+  trumps held = 2: success 0.59 (n=56)
+  trumps held = 3: success 1.00 (n=1)
+  hand (1, 2): zero-bid share of MC bids 0.68, success 0.80
+  hand (3, 5): zero-bid share of MC bids 0.34, success 0.75
+  hand (6, 8): zero-bid share of MC bids 0.12, success 0.74
+  hand (9, 10): zero-bid share of MC bids 0.10, success 0.70
+mental vs MC bid: exact agreement 0.60, within 1: 0.95, mean diff -0.19
+MC bid 0: mean won 0.29, P(won<b) 0.00, P(won>b) 0.24
+MC bid 1: mean won 1.22, P(won<b) 0.13, P(won>b) 0.28
+MC bid 2: mean won 2.21, P(won<b) 0.17, P(won>b) 0.31
+MC bid 3: mean won 3.13, P(won<b) 0.25, P(won>b) 0.31
+MC bid 4: mean won 4.04, P(won<b) 0.28, P(won>b) 0.29

@@ -1,0 +1,93 @@
+[
+ {
+  "label": "lam=0.25",
+  "hero": {
+   "lam": 0.25
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.46,
+  "ci95": 0.017252173123333693,
+  "draws": 0.0,
+  "mean_turns": 40.288,
+  "secs": 7.7
+ },
+ {
+  "label": "lam=0.5",
+  "hero": {
+   "lam": 0.5
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.499,
+  "ci95": 0.01675451199146284,
+  "draws": 0.0,
+  "mean_turns": 41.404,
+  "secs": 8.2
+ },
+ {
+  "label": "lam=0.75",
+  "hero": {
+   "lam": 0.75
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.512,
+  "ci95": 0.015608716848019302,
+  "draws": 0.0,
+  "mean_turns": 42.115,
+  "secs": 8.7
+ },
+ {
+  "label": "lam=1.25",
+  "hero": {
+   "lam": 1.25
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.496,
+  "ci95": 0.015376389945880267,
+  "draws": 0.0,
+  "mean_turns": 43.116,
+  "secs": 8.0
+ },
+ {
+  "label": "lam=1.5",
+  "hero": {
+   "lam": 1.5
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.5005,
+  "ci95": 0.016725883976483717,
+  "draws": 0.0,
+  "mean_turns": 43.6745,
+  "secs": 8.2
+ },
+ {
+  "label": "lam=2.0",
+  "hero": {
+   "lam": 2.0
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.48,
+  "ci95": 0.018036759262258967,
+  "draws": 0.0,
+  "mean_turns": 44.413,
+  "secs": 8.2
+ },
+ {
+  "label": "lam=3.0",
+  "hero": {
+   "lam": 3.0
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.461,
+  "ci95": 0.018235961084535048,
+  "draws": 0.0,
+  "mean_turns": 45.645,
+  "secs": 8.2
+ }
+]

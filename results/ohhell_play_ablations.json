@@ -1,0 +1,216 @@
+[
+ {
+  "label": "baseline need-aware (trump masters first, discard lowest sid",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "play_kw": {}
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 600,
+  "games": 2400,
+  "win_rate": 0.5460416666666666,
+  "win_ci95": 0.019253701879261034,
+  "mean_score": 121.14208333333333,
+  "score_ci95": 0.9230647290054323,
+  "score_diff": 23.615555555555538,
+  "diff_ci95": 1.0590081766707606,
+  "exact_rate": 0.5705043859649116,
+  "exact_ci95": 0.004154767649905714,
+  "secs": 2.7
+ },
+ {
+  "label": "cash side masters before trump masters",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "play_kw": {
+    "lead_pref": "side_first"
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 600,
+  "games": 2400,
+  "win_rate": 0.545625,
+  "win_ci95": 0.0193120212363195,
+  "mean_score": 121.19041666666666,
+  "score_ci95": 0.9257573516621214,
+  "score_diff": 23.643888888888874,
+  "diff_ci95": 1.0593242079584162,
+  "exact_rate": 0.5706798245614029,
+  "exact_ci95": 0.004166811900193783,
+  "secs": 2.7
+ },
+ {
+  "label": "discard from SHORTEST side suit (void-making)",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "play_kw": {
+    "discard": "short_suit"
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 600,
+  "games": 2400,
+  "win_rate": 0.549375,
+  "win_ci95": 0.019707179909093906,
+  "mean_score": 120.98583333333333,
+  "score_ci95": 0.9303468082708741,
+  "score_diff": 23.745833333333316,
+  "diff_ci95": 1.0655456600803517,
+  "exact_rate": 0.5698245614035077,
+  "exact_ci95": 0.00418883879263219,
+  "secs": 2.5
+ },
+ {
+  "label": "discard lowest card incl. trumps",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "play_kw": {
+    "discard": "lowest"
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 600,
+  "games": 2400,
+  "win_rate": 0.5458333333333333,
+  "win_ci95": 0.019313181503344132,
+  "mean_score": 121.14333333333333,
+  "score_ci95": 0.9228930331175373,
+  "score_diff": 23.61180555555554,
+  "diff_ci95": 1.0592380787996847,
+  "exact_rate": 0.5705043859649117,
+  "exact_ci95": 0.004153431204405537,
+  "secs": 2.6
+ },
+ {
+  "label": "when ducking: play LOWEST loser (keep high cards)",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "play_kw": {
+    "dump": "lowest"
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 600,
+  "games": 2400,
+  "win_rate": 0.46416666666666667,
+  "win_ci95": 0.01940531908600141,
+  "mean_score": 116.4675,
+  "score_ci95": 0.945115189067749,
+  "score_diff": 18.15805555555554,
+  "diff_ci95": 1.0887171660687922,
+  "exact_rate": 0.5476096491228064,
+  "exact_ci95": 0.00425111517492354,
+  "secs": 2.7
+ },
+ {
+  "label": "2nd hand: always try highest winner",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "play_kw": {
+    "second": "always_high"
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 600,
+  "games": 2400,
+  "win_rate": 0.5474305555555555,
+  "win_ci95": 0.01986617245471495,
+  "mean_score": 121.61541666666666,
+  "score_ci95": 0.9347786335814029,
+  "score_diff": 23.929583333333344,
+  "diff_ci95": 1.0718415573277937,
+  "exact_rate": 0.5725438596491224,
+  "exact_ci95": 0.00420302265851322,
+  "secs": 2.7
+ },
+ {
+  "label": "2nd hand: always duck unless sure",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "play_kw": {
+    "second": "duck"
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 600,
+  "games": 2400,
+  "win_rate": 0.40909722222222217,
+  "win_ci95": 0.019763942120348984,
+  "mean_score": 110.99416666666667,
+  "score_ci95": 0.9368426629916363,
+  "score_diff": 13.573194444444443,
+  "diff_ci95": 1.1025246960954993,
+  "exact_rate": 0.5248464912280703,
+  "exact_ci95": 0.0042637032709225125,
+  "secs": 2.8
+ },
+ {
+  "label": "no card tracking",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "play_kw": {
+    "tracking": false
+   }
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 600,
+  "games": 2400,
+  "win_rate": 0.5502083333333333,
+  "win_ci95": 0.019437588647156404,
+  "mean_score": 121.07958333333333,
+  "score_ci95": 0.9069021819732667,
+  "score_diff": 23.843888888888888,
+  "diff_ci95": 1.0462022843706364,
+  "exact_rate": 0.5701096491228056,
+  "exact_ci95": 0.00408749161263112,
+  "secs": 2.9
+ }
+]

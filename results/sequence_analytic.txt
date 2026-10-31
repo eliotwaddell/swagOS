@@ -1,0 +1,14 @@
+P(next opponent can complete an open four), hand=6
+unseen U | outs: 1     2     3     4     5     6
+  U= 90  | 0.07  0.13  0.19  0.24  0.30  0.35
+  U= 75  | 0.08  0.15  0.22  0.29  0.35  0.40
+  U= 60  | 0.10  0.19  0.28  0.35  0.42  0.48
+  U= 45  | 0.13  0.25  0.36  0.45  0.53  0.60
+
+Two open fours (different squares), both must be blocked: you can block one per turn;
+P(opponent completes) >= P(holds an out for the unblocked one).
+
+P(either of 2 opponents holds >=1 of m outs) (approx, 12 hidden cards):
+  U= 90  | 0.13  0.25  0.35  0.44  0.52  0.59
+  U= 75  | 0.16  0.30  0.41  0.51  0.59  0.66
+  U= 60  | 0.20  0.36  0.49  0.60  0.69  0.75

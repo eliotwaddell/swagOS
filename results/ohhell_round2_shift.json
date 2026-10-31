@@ -1,0 +1,52 @@
+[
+ {
+  "label": "cal shift -1 vs club",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "shift": -1
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.19916666666666666,
+  "win_ci95": 0.018660915362602084,
+  "mean_score": 90.5075,
+  "score_ci95": 1.0056724272416735,
+  "score_diff": -3.6800000000000006,
+  "diff_ci95": 1.0506069007687981,
+  "exact_rate": 0.4574561403508776,
+  "exact_ci95": 0.004896591591762834,
+  "secs": 1.3
+ },
+ {
+  "label": "cal shift +1 vs club",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur",
+   "shift": 1
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.12666666666666668,
+  "win_ci95": 0.019767714256880047,
+  "mean_score": 83.935,
+  "score_ci95": 1.436361881857136,
+  "score_diff": -14.631111111111114,
+  "diff_ci95": 1.8165739727744254,
+  "exact_rate": 0.36219298245614,
+  "exact_ci95": 0.006215812480812029,
+  "secs": 1.3
+ }
+]

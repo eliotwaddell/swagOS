@@ -1,0 +1,67 @@
+[
+ {
+  "label": "two-eyed cost=0",
+  "hero": {
+   "jack2": 0
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.4805,
+  "ci95": 0.013848155220209046,
+  "draws": 0.0,
+  "mean_turns": 43.1925,
+  "secs": 7.2
+ },
+ {
+  "label": "two-eyed cost=4",
+  "hero": {
+   "jack2": 4
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.4905,
+  "ci95": 0.012580841512918488,
+  "draws": 0.0,
+  "mean_turns": 43.0625,
+  "secs": 7.5
+ },
+ {
+  "label": "two-eyed cost=25",
+  "hero": {
+   "jack2": 25
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.514,
+  "ci95": 0.0113167448992683,
+  "draws": 0.0,
+  "mean_turns": 42.67,
+  "secs": 8.1
+ },
+ {
+  "label": "two-eyed cost=50",
+  "hero": {
+   "jack2": 50
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.527,
+  "ci95": 0.01369475154282909,
+  "draws": 0.0,
+  "mean_turns": 42.224,
+  "secs": 8.4
+ },
+ {
+  "label": "two-eyed cost=100",
+  "hero": {
+   "jack2": 100
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.5375,
+  "ci95": 0.014978574955839683,
+  "draws": 0.0,
+  "mean_turns": 41.7515,
+  "secs": 8.9
+ }
+]

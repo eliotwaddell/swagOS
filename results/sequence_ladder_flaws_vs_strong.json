@@ -1,0 +1,108 @@
+[
+ {
+  "label": "flaw: premature jacks (cost 0)",
+  "hero": {
+   "jack2": 0,
+   "jack1": 0
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.485,
+  "ci95": 0.01614388630612422,
+  "draws": 0.0,
+  "mean_turns": 43.067,
+  "secs": 8.1
+ },
+ {
+  "label": "flaw: ignores developing threats (blocks only 3+)",
+  "hero": {
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ]
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.5005,
+  "ci95": 0.01706726489895587,
+  "draws": 0.0,
+  "mean_turns": 41.4515,
+  "secs": 8.2
+ },
+ {
+  "label": "flaw: ignores threats below 4",
+  "hero": {
+   "W_opp": [
+    0,
+    0,
+    0,
+    0,
+    80,
+    0
+   ]
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.495,
+  "ci95": 0.017426819963896282,
+  "draws": 0.0,
+  "mean_turns": 41.159,
+  "secs": 7.9
+ },
+ {
+  "label": "flaw: individualist (ignores teammate chips)",
+  "hero": {
+   "individualist": true
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.3995,
+  "ci95": 0.018515412501483735,
+  "draws": 0.0,
+  "mean_turns": 47.5645,
+  "secs": 8.4
+ },
+ {
+  "label": "flaw: tunnel vision (only near own chips)",
+  "hero": {
+   "tunnel": true
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.4745,
+  "ci95": 0.01727442054614873,
+  "draws": 0.0,
+  "mean_turns": 42.5685,
+  "secs": 6.9
+ },
+ {
+  "label": "flaw: pure offense (lam=0)",
+  "hero": {
+   "lam": 0.0
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.4285,
+  "ci95": 0.017933889840322004,
+  "draws": 0.0,
+  "mean_turns": 38.4865,
+  "secs": 7.7
+ },
+ {
+  "label": "flaw: noisy (sd 3)",
+  "hero": {
+   "noise": 3.0
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.497,
+  "ci95": 0.01759328705357101,
+  "draws": 0.0,
+  "mean_turns": 42.845,
+  "secs": 8.0
+ }
+]

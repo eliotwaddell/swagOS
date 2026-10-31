@@ -1,0 +1,45 @@
+10 cards, 3 trumps incl. A, side A+K
+  hand AS 7S 3S AH 9H 4H KD 8D 6C 2C | trump S | bid position 0 prior [] forbidden None
+  bid 0: P=0.00 EV=0.0  bid 1: P=0.30 EV=3.3  bid 2: P=0.43 EV=5.2  bid 3: P=0.49 EV=6.3  bid 4: P=0.42 EV=5.8  bid 5: P=0.10 EV=1.6
+  -> best bid 3; mental count 3.25 -> 3
+
+10 cards, long weak trumps (5 small)
+  hand 9S 7S 5S 4S 2S QH 8H 6D 3C 2C | trump S | bid position 0 prior [] forbidden None
+  bid 0: P=0.01 EV=0.1  bid 1: P=0.04 EV=0.5  bid 2: P=0.19 EV=2.3  bid 3: P=0.45 EV=5.8  bid 4: P=0.22 EV=3.1  bid 5: P=0.07 EV=1.1
+  -> best bid 3; mental count 2.75 -> 3
+
+10 cards, no trumps, two side Aces
+  hand AH 8H 5H AD 9D 4D 2D QC 7C 3C | trump S | bid position 0 prior [] forbidden None
+  bid 0: P=0.89 EV=8.8  bid 1: P=0.96 EV=10.5  bid 2: P=0.78 EV=9.3  bid 3: P=0.06 EV=0.8  bid 4: P=0.00 EV=0.0  bid 5: P=0.00 EV=0.0
+  -> best bid 1; mental count 0.50 -> 1
+
+5 cards, trump K + side A, first to bid
+  hand KS 6S AH 7D 4C | trump S | bid position 0 prior [] forbidden None
+  bid 0: P=0.04 EV=0.4  bid 1: P=0.27 EV=3.0  bid 2: P=0.46 EV=5.5  bid 3: P=0.27 EV=3.5  bid 4: P=0.02 EV=0.3  bid 5: P=0.00 EV=0.0
+  -> best bid 2; mental count 2.50 -> 3
+
+5 cards, same hand, dealer after bids 2,2,1 (hook forbids 0)
+  hand KS 6S AH 7D 4C | trump S | bid position 3 prior [2, 2, 1] forbidden 0
+  bid 1: P=0.23 EV=2.5  bid 2: P=0.52 EV=6.2  bid 3: P=0.26 EV=3.4  bid 4: P=0.01 EV=0.2  bid 5: P=0.00 EV=0.0
+  -> best bid 2; mental count 2.19 -> 2
+
+3 cards, side K-Q-J (no trump)
+  hand KH QD JC | trump S | bid position 0 prior [] forbidden None
+  bid 0: P=0.42 EV=4.2  bid 1: P=0.41 EV=4.5  bid 2: P=0.14 EV=1.7  bid 3: P=0.01 EV=0.2
+  -> best bid 1; mental count 0.00 -> 0
+
+1 card: a side Ace, first to lead
+  hand AH | trump S | bid position 0 prior [] forbidden None
+  bid 0: P=0.60 EV=6.0  bid 1: P=0.40 EV=4.4
+  -> best bid 0; mental count 0.00 -> 0
+
+1 card: a side Ace, dealer (leads last)
+  hand AH | trump S | bid position 3 prior [0, 0, 0] forbidden 1
+  bid 0: P=0.86 EV=8.7
+  -> best bid 0; mental count 0.00 -> 0
+
+1 card: low trump (4 of trumps), first to lead
+  hand 4S | trump S | bid position 0 prior [] forbidden None
+  bid 0: P=0.48 EV=4.8  bid 1: P=0.52 EV=5.7
+  -> best bid 1; mental count 0.75 -> 1
+

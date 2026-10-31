@@ -1,0 +1,8 @@
+baseline need-aware (trump masters first, discard lowest sid win 0.546±0.019 (fair 0.250)  score 121.1±0.9  diff +23.6±1.1  exact 0.571  [2400 games, 2.7s]
+cash side masters before trump masters   win 0.546±0.019 (fair 0.250)  score 121.2±0.9  diff +23.6±1.1  exact 0.571  [2400 games, 2.7s]
+discard from SHORTEST side suit (void-making) win 0.549±0.020 (fair 0.250)  score 121.0±0.9  diff +23.7±1.1  exact 0.570  [2400 games, 2.5s]
+discard lowest card incl. trumps         win 0.546±0.019 (fair 0.250)  score 121.1±0.9  diff +23.6±1.1  exact 0.571  [2400 games, 2.6s]
+when ducking: play LOWEST loser (keep high cards) win 0.464±0.019 (fair 0.250)  score 116.5±0.9  diff +18.2±1.1  exact 0.548  [2400 games, 2.7s]
+2nd hand: always try highest winner      win 0.547±0.020 (fair 0.250)  score 121.6±0.9  diff +23.9±1.1  exact 0.573  [2400 games, 2.7s]
+2nd hand: always duck unless sure        win 0.409±0.020 (fair 0.250)  score 111.0±0.9  diff +13.6±1.1  exact 0.525  [2400 games, 2.8s]
+no card tracking                         win 0.550±0.019 (fair 0.250)  score 121.1±0.9  diff +23.8±1.0  exact 0.570  [2400 games, 2.9s]

@@ -1,0 +1,195 @@
+{
+ "n": 4,
+ "report": {
+  "h=1,T": {
+   "n_obs": 1600,
+   "rmse": 0.34779134114434707,
+   "round_pred_exact": 0.83875,
+   "coefs": {
+    "_int": 0.095,
+    "trump_A": 0.15,
+    "trump_K": 0.064,
+    "trump_Q": 0.106,
+    "trump_J": 0.016,
+    "trump_low": -0.252,
+    "side_A": 0.133,
+    "side_K_guarded": 0.0,
+    "side_K_bare": 0.14,
+    "side_Q": 0.007,
+    "voids_with_trump": 0.25,
+    "singletons_with_trump": 0.0
+   }
+  },
+  "h=2,T": {
+   "n_obs": 3200,
+   "rmse": 0.49985561449086124,
+   "round_pred_exact": 0.7503125,
+   "coefs": {
+    "_int": 0.091,
+    "trump_A": 0.296,
+    "trump_K": 0.126,
+    "trump_Q": 0.104,
+    "trump_J": 0.061,
+    "trump_low": -0.183,
+    "side_A": 0.153,
+    "side_K_guarded": 0.021,
+    "side_K_bare": 0.257,
+    "side_Q": 0.064,
+    "voids_with_trump": 0.518,
+    "singletons_with_trump": -0.177
+   }
+  },
+  "h=3,T": {
+   "n_obs": 3200,
+   "rmse": 0.5841055327448069,
+   "round_pred_exact": 0.66625,
+   "coefs": {
+    "_int": 0.103,
+    "trump_A": 0.949,
+    "trump_K": 0.696,
+    "trump_Q": 0.725,
+    "trump_J": 0.666,
+    "trump_low": 0.484,
+    "side_A": 0.313,
+    "side_K_guarded": 0.133,
+    "side_K_bare": 0.264,
+    "side_Q": 0.164,
+    "voids_with_trump": 0.117,
+    "singletons_with_trump": 0.03
+   }
+  },
+  "h=4,T": {
+   "n_obs": 3200,
+   "rmse": 0.6491763369301758,
+   "round_pred_exact": 0.5971875,
+   "coefs": {
+    "_int": 0.131,
+    "trump_A": 1.331,
+    "trump_K": 1.191,
+    "trump_Q": 1.177,
+    "trump_J": 1.194,
+    "trump_low": 0.803,
+    "side_A": 0.389,
+    "side_K_guarded": 0.153,
+    "side_K_bare": 0.309,
+    "side_Q": 0.201,
+    "voids_with_trump": -0.185,
+    "singletons_with_trump": -0.075
+   }
+  },
+  "h=5,T": {
+   "n_obs": 3200,
+   "rmse": 0.7433482295312196,
+   "round_pred_exact": 0.5353125,
+   "coefs": {
+    "_int": 0.128,
+    "trump_A": 1.512,
+    "trump_K": 1.26,
+    "trump_Q": 1.205,
+    "trump_J": 1.007,
+    "trump_low": 0.827,
+    "side_A": 0.585,
+    "side_K_guarded": 0.243,
+    "side_K_bare": 0.282,
+    "side_Q": 0.178,
+    "voids_with_trump": -0.262,
+    "singletons_with_trump": -0.166
+   }
+  },
+  "h=6,T": {
+   "n_obs": 3200,
+   "rmse": 0.7670487634666623,
+   "round_pred_exact": 0.54125,
+   "coefs": {
+    "_int": -0.046,
+    "trump_A": 1.441,
+    "trump_K": 1.28,
+    "trump_Q": 1.185,
+    "trump_J": 1.107,
+    "trump_low": 0.754,
+    "side_A": 0.674,
+    "side_K_guarded": 0.362,
+    "side_K_bare": 0.386,
+    "side_Q": 0.271,
+    "voids_with_trump": -0.162,
+    "singletons_with_trump": -0.144
+   }
+  },
+  "h=7,T": {
+   "n_obs": 3200,
+   "rmse": 0.796943704913574,
+   "round_pred_exact": 0.515625,
+   "coefs": {
+    "_int": -0.128,
+    "trump_A": 1.544,
+    "trump_K": 1.433,
+    "trump_Q": 1.155,
+    "trump_J": 1.214,
+    "trump_low": 0.803,
+    "side_A": 0.746,
+    "side_K_guarded": 0.394,
+    "side_K_bare": 0.464,
+    "side_Q": 0.238,
+    "voids_with_trump": -0.274,
+    "singletons_with_trump": -0.223
+   }
+  },
+  "h=8,T": {
+   "n_obs": 3200,
+   "rmse": 0.837067634764699,
+   "round_pred_exact": 0.48625,
+   "coefs": {
+    "_int": -0.249,
+    "trump_A": 1.469,
+    "trump_K": 1.414,
+    "trump_Q": 1.097,
+    "trump_J": 1.024,
+    "trump_low": 0.706,
+    "side_A": 0.765,
+    "side_K_guarded": 0.457,
+    "side_K_bare": 0.343,
+    "side_Q": 0.206,
+    "voids_with_trump": -0.039,
+    "singletons_with_trump": -0.106
+   }
+  },
+  "h=9,T": {
+   "n_obs": 3200,
+   "rmse": 0.8703123564292375,
+   "round_pred_exact": 0.4759375,
+   "coefs": {
+    "_int": -0.523,
+    "trump_A": 1.613,
+    "trump_K": 1.414,
+    "trump_Q": 1.217,
+    "trump_J": 1.043,
+    "trump_low": 0.789,
+    "side_A": 0.827,
+    "side_K_guarded": 0.554,
+    "side_K_bare": 0.179,
+    "side_Q": 0.242,
+    "voids_with_trump": -0.086,
+    "singletons_with_trump": -0.14
+   }
+  },
+  "h=10,T": {
+   "n_obs": 3200,
+   "rmse": 0.8862427537675781,
+   "round_pred_exact": 0.4646875,
+   "coefs": {
+    "_int": -0.728,
+    "trump_A": 1.696,
+    "trump_K": 1.403,
+    "trump_Q": 1.289,
+    "trump_J": 1.136,
+    "trump_low": 0.79,
+    "side_A": 0.905,
+    "side_K_guarded": 0.543,
+    "side_K_bare": 0.456,
+    "side_Q": 0.27,
+    "voids_with_trump": -0.035,
+    "singletons_with_trump": -0.156
+   }
+  }
+ }
+}

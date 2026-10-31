@@ -1,0 +1,67 @@
+[
+ {
+  "label": "one-eyed cost=0",
+  "hero": {
+   "jack1": 0
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.4925,
+  "ci95": 0.012119075128984965,
+  "draws": 0.0,
+  "mean_turns": 42.5495,
+  "secs": 8.0
+ },
+ {
+  "label": "one-eyed cost=4",
+  "hero": {
+   "jack1": 4
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.4995,
+  "ci95": 0.010605579565394712,
+  "draws": 0.0,
+  "mean_turns": 42.5795,
+  "secs": 7.9
+ },
+ {
+  "label": "one-eyed cost=25",
+  "hero": {
+   "jack1": 25
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.5035,
+  "ci95": 0.00975334137965385,
+  "draws": 0.0,
+  "mean_turns": 42.7915,
+  "secs": 7.9
+ },
+ {
+  "label": "one-eyed cost=50",
+  "hero": {
+   "jack1": 50
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.4995,
+  "ci95": 0.012594588650022012,
+  "draws": 0.0,
+  "mean_turns": 42.8535,
+  "secs": 8.0
+ },
+ {
+  "label": "one-eyed cost=100",
+  "hero": {
+   "jack1": 100
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.5035,
+  "ci95": 0.014964962094522345,
+  "draws": 0.0,
+  "mean_turns": 42.9255,
+  "secs": 7.9
+ }
+]

@@ -1,0 +1,18 @@
+[
+ {
+  "label": "MC lookahead vs strong",
+  "hero": {
+   "kind": "mc",
+   "k": 5,
+   "R": 8,
+   "depth": 8
+  },
+  "villain": {},
+  "games": 120,
+  "win_rate": 0.3,
+  "ci95": 0.07439427716280514,
+  "draws": 0.0,
+  "mean_turns": 45.15,
+  "secs": 82.4
+ }
+]

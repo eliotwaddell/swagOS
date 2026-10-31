@@ -1,0 +1,218 @@
+[
+ {
+  "label": "random bid / random play",
+  "hero": {
+   "bidder": "random",
+   "player": "random"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.0025,
+  "win_ci95": 0.0028195388507881525,
+  "mean_score": 41.075,
+  "score_ci95": 1.087582850161001,
+  "score_diff": -54.36472222222223,
+  "diff_ci95": 1.3902982235146608,
+  "exact_rate": 0.19434210526315726,
+  "exact_ci95": 0.005076118890186138,
+  "secs": 1.0
+ },
+ {
+  "label": "naive bid / greedy play (trick hog)",
+  "hero": {
+   "bidder": "naive",
+   "player": "greedy"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.029166666666666667,
+  "win_ci95": 0.009023097863682912,
+  "mean_score": 69.8125,
+  "score_ci95": 1.2369716302739378,
+  "score_diff": -33.890555555555565,
+  "diff_ci95": 1.287386306191093,
+  "exact_rate": 0.33741228070175405,
+  "exact_ci95": 0.005853377939159824,
+  "secs": 1.0
+ },
+ {
+  "label": "naive bid / need-aware play",
+  "hero": {
+   "bidder": "naive",
+   "player": "heur"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.33569444444444446,
+  "win_ci95": 0.021844882099047867,
+  "mean_score": 102.70333333333333,
+  "score_ci95": 1.1446002167254004,
+  "score_diff": 6.606111111111106,
+  "diff_ci95": 1.0485467486506586,
+  "exact_rate": 0.49583333333333324,
+  "exact_ci95": 0.005376730070425463,
+  "secs": 1.3
+ },
+ {
+  "label": "thumb bid / no card tracking",
+  "hero": {
+   "bidder": "thumb",
+   "player": "heur_notrack"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.24791666666666667,
+  "win_ci95": 0.011652757874086773,
+  "mean_score": 94.15416666666667,
+  "score_ci95": 1.0303906278984405,
+  "score_diff": -0.2083333333333331,
+  "diff_ci95": 0.40704429759016264,
+  "exact_rate": 0.46793859649122843,
+  "exact_ci95": 0.0049042552893015815,
+  "secs": 1.2
+ },
+ {
+  "label": "thumb bid / need-aware (mirror)",
+  "hero": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.25,
+  "win_ci95": 0.0,
+  "mean_score": 94.48083333333334,
+  "score_ci95": 1.040930770375357,
+  "score_diff": -1.7763568394002505e-17,
+  "diff_ci95": 2.146585280938738e-16,
+  "exact_rate": 0.46947368421052665,
+  "exact_ci95": 0.004962482664975359,
+  "secs": 1.2
+ },
+ {
+  "label": "calibrated bid / need-aware",
+  "hero": {
+   "bidder": "cal",
+   "player": "heur"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.5495833333333333,
+  "win_ci95": 0.02785869642931965,
+  "mean_score": 121.25,
+  "score_ci95": 1.3357424876491115,
+  "score_diff": 23.751666666666672,
+  "diff_ci95": 1.6045078288860943,
+  "exact_rate": 0.5706578947368416,
+  "exact_ci95": 0.006025094423878575,
+  "secs": 1.2
+ },
+ {
+  "label": "MC bid / need-aware",
+  "hero": {
+   "bidder": "mc",
+   "player": "heur"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.6301388888888888,
+  "win_ci95": 0.026683978283520367,
+  "mean_score": 125.985,
+  "score_ci95": 1.2539486097336054,
+  "score_diff": 28.92527777777777,
+  "diff_ci95": 1.5145773094610528,
+  "exact_rate": 0.5921052631578951,
+  "exact_ci95": 0.005573824228426818,
+  "secs": 178.2
+ },
+ {
+  "label": "thumb bid / PIMC play",
+  "hero": {
+   "bidder": "thumb",
+   "player": "pimc"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.5119444444444444,
+  "win_ci95": 0.023807919359683023,
+  "mean_score": 109.4025,
+  "score_ci95": 1.2801677118780637,
+  "score_diff": 20.412499999999994,
+  "diff_ci95": 1.1037181057280558,
+  "exact_rate": 0.5359210526315781,
+  "exact_ci95": 0.005988804515911015,
+  "secs": 146.3
+ },
+ {
+  "label": "MC bid / PIMC play",
+  "hero": {
+   "bidder": "mc",
+   "player": "pimc"
+  },
+  "villain": {
+   "bidder": "thumb",
+   "player": "heur"
+  },
+  "n_players": 4,
+  "scoring": "standard",
+  "deal_blocks": 300,
+  "games": 1200,
+  "win_rate": 0.8184722222222223,
+  "win_ci95": 0.023565414829029536,
+  "mean_score": 138.1925,
+  "score_ci95": 1.2511365246312824,
+  "score_diff": 45.18916666666666,
+  "diff_ci95": 1.6000403020104597,
+  "exact_rate": 0.6435087719298255,
+  "exact_ci95": 0.005615826607889306,
+  "secs": 328.0
+ }
+]

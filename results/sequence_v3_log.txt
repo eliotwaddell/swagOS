@@ -1,0 +1,7 @@
+tuned one-eyed cost=0 vs tuned(12)            hero win 0.498±0.013  draws 0.000  turns 37  [2000 games 12.3s]
+tuned one-eyed cost=30 vs tuned(12)           hero win 0.488±0.013  draws 0.000  turns 36  [2000 games 12.1s]
+tuned one-eyed cost=100 vs tuned(12)          hero win 0.420±0.014  draws 0.000  turns 35  [2000 games 12.0s]
+tuned + emergency-block(4s) vs tuned          hero win 0.486±0.015  draws 0.000  turns 39  [2000 games 12.4s]
+tuned + block 3s & 4s hard vs tuned           hero win 0.420±0.016  draws 0.000  turns 41  [2000 games 12.5s]
+tuned tunnel vision vs tuned                  hero win 0.454±0.016  draws 0.000  turns 37  [2000 games 10.5s]
+tuned noisy vs tuned                          hero win 0.488±0.016  draws 0.000  turns 37  [2000 games 12.7s]

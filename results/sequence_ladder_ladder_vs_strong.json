@@ -1,0 +1,50 @@
+[
+ {
+  "label": "random vs strong",
+  "hero": {
+   "kind": "random"
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.0025,
+  "ci95": 0.0021869551373479923,
+  "draws": 0.0,
+  "mean_turns": 42.8685,
+  "secs": 4.4
+ },
+ {
+  "label": "human-model vs strong",
+  "hero": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.3795,
+  "ci95": 0.018781420323004044,
+  "draws": 0.0,
+  "mean_turns": 44.9135,
+  "secs": 8.0
+ },
+ {
+  "label": "strong mirror (sanity, expect .5)",
+  "hero": {},
+  "villain": {},
+  "games": 2000,
+  "win_rate": 0.5,
+  "ci95": 0.0,
+  "draws": 0.0,
+  "mean_turns": 42.757,
+  "secs": 8.5
+ }
+]

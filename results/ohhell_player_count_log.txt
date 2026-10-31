@@ -1,0 +1,6 @@
+mental vs club, 3 players                win 0.572±0.025 (fair 0.333)  score 87.3±1.2  diff +17.2±1.4  exact 0.419  [1200 games, 1.2s]
+naive vs club, 3 players                 win 0.440±0.023 (fair 0.333)  score 76.7±1.1  diff +7.5±1.1  exact 0.371  [1200 games, 1.1s]
+mental-1 vs club, 3 players              win 0.248±0.019 (fair 0.333)  score 60.0±0.9  diff -6.1±0.9  exact 0.308  [1200 games, 1.2s]
+mental vs club, 5 players                win 0.373±0.021 (fair 0.200)  score 130.7±1.0  diff +14.4±1.1  exact 0.625  [2000 games, 2.8s]
+naive vs club, 5 players                 win 0.211±0.015 (fair 0.200)  score 117.3±1.0  diff +0.3±1.0  exact 0.568  [2000 games, 2.4s]
+mental-1 vs club, 5 players              win 0.172±0.014 (fair 0.200)  score 111.1±0.8  diff -3.5±0.9  exact 0.566  [2000 games, 2.4s]

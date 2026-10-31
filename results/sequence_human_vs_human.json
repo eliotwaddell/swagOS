@@ -1,0 +1,105 @@
+[
+ {
+  "label": "strong vs human-model",
+  "hero": {},
+  "villain": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "games": 2000,
+  "win_rate": 0.6205,
+  "ci95": 0.018781420323004044,
+  "draws": 0.0,
+  "mean_turns": 44.9135,
+  "secs": 7.7
+ },
+ {
+  "label": "lam1.5 vs human-model",
+  "hero": {
+   "lam": 1.5
+  },
+  "villain": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "games": 2000,
+  "win_rate": 0.625,
+  "ci95": 0.01768963321053105,
+  "draws": 0.0,
+  "mean_turns": 45.727,
+  "secs": 8.0
+ },
+ {
+  "label": "lam0.5 vs human-model",
+  "hero": {
+   "lam": 0.5
+  },
+  "villain": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "games": 2000,
+  "win_rate": 0.5985,
+  "ci95": 0.01886497611246099,
+  "draws": 0.0,
+  "mean_turns": 43.2505,
+  "secs": 7.6
+ },
+ {
+  "label": "jack-hoarder vs human-model",
+  "hero": {
+   "jack2": 50,
+   "jack1": 50
+  },
+  "villain": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "games": 2000,
+  "win_rate": 0.646,
+  "ci95": 0.018362571672792417,
+  "draws": 0.0,
+  "mean_turns": 44.065,
+  "secs": 8.2
+ }
+]

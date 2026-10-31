@@ -1,0 +1,6 @@
+mental tie=up, 4p                        win 0.484±0.019 (fair 0.250)  score 115.1±0.9  diff +18.7±1.0  exact 0.550  [2400 games, 2.9s]
+mental tie=down, 4p                      win 0.450±0.019 (fair 0.250)  score 111.7±0.8  diff +16.2±0.9  exact 0.542  [2400 games, 2.9s]
+mental tie=up, 3p                        win 0.565±0.021 (fair 0.333)  score 87.0±1.0  diff +17.3±1.1  exact 0.417  [1800 games, 1.8s]
+mental tie=down, 3p                      win 0.511±0.020 (fair 0.333)  score 81.5±0.9  diff +12.8±1.0  exact 0.398  [1800 games, 1.7s]
+mental tie=up, 5p                        win 0.363±0.017 (fair 0.200)  score 130.5±0.8  diff +13.9±0.9  exact 0.624  [3000 games, 3.9s]
+mental tie=down, 5p                      win 0.375±0.018 (fair 0.200)  score 131.1±0.8  diff +14.9±0.9  exact 0.635  [3000 games, 4.0s]

@@ -1,0 +1,254 @@
+[
+ {
+  "label": "tuned one-eyed cost=0 vs tuned(12)",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75,
+   "jack1": 0
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 2000,
+  "win_rate": 0.4985,
+  "ci95": 0.012821237870835273,
+  "draws": 0.0,
+  "mean_turns": 36.8335,
+  "secs": 12.3
+ },
+ {
+  "label": "tuned one-eyed cost=30 vs tuned(12)",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75,
+   "jack1": 30
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 2000,
+  "win_rate": 0.488,
+  "ci95": 0.012912131223494158,
+  "draws": 0.0,
+  "mean_turns": 36.364,
+  "secs": 12.1
+ },
+ {
+  "label": "tuned one-eyed cost=100 vs tuned(12)",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75,
+   "jack1": 100
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 2000,
+  "win_rate": 0.42,
+  "ci95": 0.014289616970134403,
+  "draws": 0.0,
+  "mean_turns": 35.408,
+  "secs": 12.0
+ },
+ {
+  "label": "tuned + emergency-block(4s) vs tuned",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75,
+   "W_opp": [
+    0,
+    1,
+    3,
+    9,
+    200,
+    0
+   ]
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 2000,
+  "win_rate": 0.4865,
+  "ci95": 0.01526138848134004,
+  "draws": 0.0,
+  "mean_turns": 39.3945,
+  "secs": 12.4
+ },
+ {
+  "label": "tuned + block 3s & 4s hard vs tuned",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75,
+   "W_opp": [
+    0,
+    1,
+    3,
+    40,
+    200,
+    0
+   ]
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 2000,
+  "win_rate": 0.4205,
+  "ci95": 0.016280835150359864,
+  "draws": 0.0,
+  "mean_turns": 41.3065,
+  "secs": 12.5
+ },
+ {
+  "label": "tuned tunnel vision vs tuned",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75,
+   "tunnel": true
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 2000,
+  "win_rate": 0.4535,
+  "ci95": 0.015575638057585344,
+  "draws": 0.0,
+  "mean_turns": 36.7655,
+  "secs": 10.5
+ },
+ {
+  "label": "tuned noisy vs tuned",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75,
+   "noise": 3.0
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 2000,
+  "win_rate": 0.4885,
+  "ci95": 0.01612514709293434,
+  "draws": 0.0,
+  "mean_turns": 37.2315,
+  "secs": 12.7
+ }
+]

@@ -121,15 +121,14 @@ Count your sure winners vs need. Keep the card most likely to be *beaten* if you
 - **They block every three** → plant decoy threes on the edges; they waste turns.
 - **Tunnel vision** → one chip in the *middle* of their line (or a one-eyed jack there) kills several windows.
 
-### 2v2v2 (three teams, 5 cards, ONE sequence wins): what changes
-- **Defend less.** Your block helps the third team as much as you. Best denial weight was half of 2v2's; heavy defense: 26% vs 33% par.
-- **Except fours: block every live enemy open four, from either team.** One sequence ends it, and 4 enemy turns pass before you move again (a 4-out four is completed ~60–80% of the time if left).
-- **Defend against whoever is closest to winning**, not whoever sits next to you. Ignoring one team hands them the game.
-- **Same jack rules:** wild only to complete (spending freely: 23%); one-eyed freely.
-- **Partner's chips = yours** (ignoring them: 22%).
-- **Go where the board is open, not where it's central.** With three teams in the middle, early center control no longer predicts winning.
-- First team to move wins ~36% vs ~31–32% for the others.
-*[Tuned 2v2v2 team vs human-model teams: 52% wins, par 33%; 3,000 games.]*
+### 2v2v2 (three teams, 5 cards, TWO sequences, our rule): what changes
+- **Same jack rules, same partner rule:** wild jacks only to complete (spending freely: 23% vs 33% par); one-eyed used freely; ignoring partner: 24%.
+- **Defend lightly.** Your block helps the third team as much as you; heavy defense: 26%.
+- **Block an enemy four if it would be their SECOND sequence (game over).** An enemy's FIRST four: block only if the block also builds your line. *[Hard-blocking every four: 28.6%.]*
+- **Defend against whoever is closest to winning**, not whoever sits next to you.
+- **Go where lines are still open, not where it's central.** Holding the center early doesn't predict winning with 6 players. Second sequences often run outward, even through corners.
+- **The first team to move wins ~41%** (others ~30%). Rotate who starts.
+*[2v2 doctrine vs human-model teams: 56% wins, par 33%; 3,000 games. If you ever play one sequence instead: every enemy four is lethal, so block them all.]*
 
 ### Endgame
 - One sequence up + a wild jack in hand = any open four is a forced win. Build one.
@@ -142,7 +141,7 @@ Count your sure winners vs need. Keep the card most likely to be *beaten* if you
 
 **Oh Hell:** *What's my need? Do I want this trick? If not, what's my highest card that still loses? Who's void?*
 
-**Sequence:** *Can we win? Can they win next turn (count outs)? (2v2v2: any team's four is lethal; threes can wait.) Can I make a fork? Am I about to waste a wild jack? Is my partner's line better than mine?*
+**Sequence:** *Can we win? Can they win next turn (count outs)? (2v2v2: block fours that would be a team's SECOND sequence; threes can wait.) Can I make a fork? Am I about to waste a wild jack? Is my partner's line better than mine?*
 
 ---
 

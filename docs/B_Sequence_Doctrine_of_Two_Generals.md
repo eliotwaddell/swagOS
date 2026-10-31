@@ -244,86 +244,83 @@ Looks threatening; isn't. Check the discard pile before spending defense on it.
 ## 11. Part II — 2v2v2 (three teams of two)
 
 ### 11.1 Rules and setup
-Official 3-team rules: **6 players seated A-B-C-A-B-C, 5 cards each, ONE sequence wins.** Everything else (jacks, corners, dead cards, no table talk) is unchanged. The engine now takes `n_teams=3` and passes its own rule tests (`test_three_team` in `sequence/test_engine.py`), and the 2v2 results reproduce exactly after the refactor.
+6 players seated A-B-C-A-B-C, 5 cards each. **Your table plays TWO sequences to win** (the printed rule for 3 teams is one; both were simulated, and the two-sequence results come first). A second sequence may share one chip with the first, as in 2v2. Jacks, corners, dead cards and no table talk are unchanged. The engine takes `n_teams=3, seqs_to_win=…` and passes its own rule tests; the 2v2 results reproduce exactly after the refactor.
 
-**Protocol.** Every shuffle is played 3 times, with the hero team in seating slot 1, 2 and 3; two villain teams fill the other slots. **Par = 33.3%.** 1,000 shuffles = 3,000 games per comparison; CIs over shuffles. Opponents are the best 2v2 agent unless noted. `python -m sequence.three_team 1000 all`, `python -m sequence.three_team_v2 1000`, `python -m sequence.positional 4000 3`.
+**Protocol.** Every shuffle is played 3 times, with the hero team in seating slot 1, 2 and 3; two villain teams fill the other slots. **Par = 33.3%.** 1,000 shuffles = 3,000 games per comparison; CIs over shuffles. Opponents are the best 2v2 agent (line weights 1:3:9:27, denial 0.75, wild jacks only to complete) unless noted.
+`SEQS=2 python -m sequence.three_team 1000 all` · `SEQS=2 python -m sequence.positional 3000 3` (omit `SEQS=2` for one sequence).
 
-### 11.2 Headline results
+### 11.2 Headline results — TWO sequences (your rule)
+
+Games average ~72 placements (≈12 turns per player), twice as long as one-sequence games.
 
 | Change (vs a field of the 2v2-tuned agent) | Hero win rate (par 33.3%) |
 |---|---|
-| **2v2v2 recommended** (line weights 1:4:16:80, denial weight 0.5, wild jacks only to complete) | **35.6% ± 1.3** |
-| Same agent vs a field of human-model teams | **52.0% ± 1.7** |
-| 2v2-tuned agent vs human-model teams | 53.3% ± 1.7 |
-| Human model vs 2v2-tuned teams | 16.1% ± 1.3 |
-| **Wild jacks spent freely** (cost 0) | **23.3% ± 1.3** |
-| Wild jacks "cost 12" (use when moderately useful) | 26.6% ± 1.3 |
-| One-eyed jacks hoarded (cost 100) | 27.8% ± 1.0 |
-| **Individualist (ignores partner's chips)** | **22.0% ± 1.3** |
-| Tunnel vision | 28.8% ± 1.3 |
-| Hard-block every enemy three and four | 28.6% ± 1.3 |
-| Hard-block enemy fours only | 34.4% ± 1.1 (fine) |
-| Flat line weights 1:2:4:8 (no fork-seeking) | 23.3% ± 1.3 |
+| **2v2 doctrine as-is** (1:3:9:27, denial 0.5–0.75, wild jacks only to complete) | **par: no variant beat it** |
+| Same agent vs a field of human-model teams | **56.4% ± 1.7** |
+| Human model vs 2v2-tuned teams | 16.6% ± 1.3 |
+| **Wild jacks spent freely** | **23.2% ± 1.4** (cost 0 alone: 24.8%; cost 12: 26.9%; cost 30: 30.8%) |
+| One-eyed jacks hoarded (cost 100) | 27.0% ± 1.3 (using them freely: 31.3–32.9%, ≈ par) |
+| **Individualist (ignores partner's chips)** | **24.0% ± 1.4** |
+| Tunnel vision | 27.5% ± 1.4 |
+| **Hard-block every enemy four** | **28.6% ± 1.4** (neutral with one sequence; costly with two) |
+| Hard-block every three and four | 25.0% ± 1.4 |
+| Line weights 1:2:4:8 / 1:4:16:80 / 1:5:25:125 | 28.1% / 30.7% / 28.6% (tripling stays best) |
 
-### 11.3 What changes from 2v2 — defense is a shared burden
+**Denial weight λ vs both opponents (two sequences):**
 
-Denial weight λ against **both** opponents:
+| λ | 0 | 0.25 | 0.5 | 0.75 (tuned) | 1.0 | 1.5 | 2.0 |
+|---|---|---|---|---|---|---|---|
+| Win % | 31.1 | 34.0 | 33.5 | 33.3 | 31.3 | 28.9 | 26.4 |
 
-| λ | 0 | 0.25 | **0.5** | 1.0 | 1.5 | 2.0 |
-|---|---|---|---|---|---|---|
-| Win % | 31.7 | 33.6 | **35.0** | 31.5 | 27.9 | 26.3 |
+The flat top (0.25–0.75) means a moderate-to-light defense is right; heavy defense clearly loses.
 
-The best defense level is **lower than in 2v2** (0.5 vs 0.75–1.0), and heavy defense costs much more: −7 points at λ = 2. Every turn you spend blocking team B benefits team C as much as you. **Block only what would otherwise win; let the other team share the work.**
+**Seat order (mirror match):** the team moving **first wins 41%**, second and third **30%** each. That's a bigger first-mover edge than with one sequence (36/32/31). Rotate who starts.
 
-**Which opponent to defend against?** Splitting the denial weight by turn order (the team that moves right after you = *next*, the other = *far*):
+### 11.3 What's different from 2v2 — and from one-sequence 2v2v2
 
-| λ next / λ far | Hero | Next team wins | Far team wins |
-|---|---|---|---|
-| 0.5 / 0.5 (uniform) | 35.0% | 32.3% | 32.8% |
-| 1.0 / 0.25 | 33.5% | **24.5%** | **42.0%** |
-| 0.75 / 0.25 | 34.8% | 26.6% | 38.6% |
-| 0.5 / 1.0 | 32.0% | **39.4%** | **28.7%** |
-
-Focusing on one opponent barely changes *your* win rate. It mainly hands the game to the opponent you ignore. Defend against whoever is closer to winning, not whoever sits next to you. Within that, a slight tilt toward the *next* team is never worse (1.0/0.5: 34.1% vs 0.5/1.0: 32.0%).
+1. **Defense is a shared burden.** Your block helps the third team as much as you. Heavy defense costs 7 points (26.4%).
+2. **Don't panic-block every enemy four.** With two sequences to win, an enemy's *first* sequence doesn't end the game. A block that costs you a good move often just delays them while the third team profits. Hard-blocking all fours: **28.6%** (vs 34.4% with one sequence). **Block a four when it would be that team's SECOND sequence (game-ending), or when blocking also builds your own line.** Otherwise keep building.
+3. **Defend against whoever is closest to winning.** Splitting defense by turn order mostly changes *which* opponent wins (next team 23.6% vs far team 42.9% when you ignore the far team), not your own rate (32.4–33.4%).
+4. **Jacks: identical doctrine.** Wild only to complete (each step toward free use costs you); one-eyed used freely, not hoarded.
+5. **Partner's chips = yours** (24.0% if ignored).
 
 ### 11.4 Threat arithmetic with 5-card hands
 
 | Unseen cards U | 1 out | 2 | 3 | 4 | 5 | 6 outs |
 |---|---|---|---|---|---|---|
-| **One specific enemy can complete** — U=95 | 5% | 10% | 15% | 20% | 24% | 28% |
+| **One specific enemy can complete**: U=95 | 5% | 10% | 15% | 20% | 24% | 28% |
 | U=65 | 8% | 15% | 22% | 28% | 34% | 39% |
-| **Either of the 2 enemies moving before your partner** — U=95 | 11% | 20% | 29% | 36% | 43% | 50% |
+| **Either of the 2 enemies moving before your partner**: U=95 | 11% | 20% | 29% | 36% | 43% | 50% |
 | U=65 | 15% | 29% | 40% | 50% | 58% | 65% |
-| **Any of the 4 enemy turns before your own next turn** — U=95 | 21% | 38% | 51% | 62% | 70% | 77% |
+| **Any of the 4 enemy turns before your own next turn**: U=95 | 21% | 38% | 51% | 62% | 70% | 77% |
 | U=65 | 31% | 52% | 68% | 78% | 85% | 90% |
 
-Turn order A1 → B1 → C1 → A2 → B2 → C2: **two enemy turns pass between you and your partner, and four before you move again.** An open four left alive for a full round is completed more often than not. Since one sequence wins, *every* live open four is a game-ending threat. The enemy fours are the one thing you must block (the "hard-block fours" variant was neutral to slightly positive). Threes are not.
+Turn order A1 → B1 → C1 → A2 → B2 → C2: **two enemy turns pass between you and your partner, four before you move again.** A *game-ending* four (a team's second sequence) with 3+ outs left for a round is completed more often than not. Block those. A team's *first* four is the one you may let the other team deal with: the team moving between you and them has its own reasons to block.
 
-**The free-rider rule.** If team C has an open four and team B moves before you, B may block it for you (B loses too if C wins). If B has the card, they will. **But count on it only when C's four has few outs and you have something better to do.** The analytic table says B holds a specific single card only 5–8% of the time.
+### 11.5 Board value in 2v2v2 (two sequences, 3,000 games)
 
-### 11.5 Seat order
-In the mirror match, the team moving first won **36%**, second **32%**, third **31%**. Seat advantage is real but small. Rotate the first dealer if you keep a running tally.
-
-### 11.6 Board value in 2v2v2
-
-| Ring | % in the winning sequence | Team win rate when holding the square at ply 16 |
+| Ring | % in a winning team's sequence | Team win rate when holding the square at ply 16 |
 |---|---|---|
-| 0 (edge) | 2.7% | 34.6% |
-| 1 | 3.5% | 35.2% |
-| 2 | 7.1% | 33.0% |
-| 3 | 8.9% | 33.5% |
-| 4 (center) | 11.5% | 33.9% |
+| 0 (edge) | 10.7% | 34.3% |
+| 1 | 12.2% | 33.4% |
+| 2 | 20.1% | 33.3% |
+| 3 | 24.5% | 33.4% |
+| 4 (center) | 30.5% | 33.9% |
 
-(3,870 decided games.) The center still hosts the winning line most often (lines-through-square correlation r = 0.92). But **early central occupancy no longer predicts winning**: with three teams crowding the middle, it gets blocked in all directions. Winning lines are more often half-in, half-out, wherever space opens. **Practical shift: in 2v2v2, prefer the square with the most *still-open* lines through it, not the geometrically central one.** A ring-2 square with no enemy chips nearby beats a contested center square.
+Lines-through-square still predicts which squares end up in sequences (r = 0.94). But **holding the center early doesn't predict winning**: every ring is 33–34%, which is par. With six players crowding the middle, central lines get blocked from all directions. Edges carry much more of the winning lines than in 2v2 (11% vs 4%), and second sequences in particular often run along the outside or through a corner. **Practical shift: choose the square with the most still-open lines through it, even off-center.** For your second sequence, look outward from the first one, including toward corners.
 
-### 11.7 2v2v2 doctrine (differences from 2v2 in bold)
+### 11.6 Two-sequence 2v2v2 doctrine (differences from 2v2 in bold)
 
-1. Can we complete our (single) sequence now? → do it, wild jack allowed.
-2. Any enemy open four with live outs? → block it (natural card → one-eyed jack on its best chip → wild jack if many outs). **Both enemy teams' fours are lethal: one sequence ends the game.**
-3. **Skip blocking threes** unless they cross another enemy line. **Your block helps the third team as much as you.**
-4. Build forks and extend the team's best line toward **open space**, not toward the crowded center.
-5. **Wild jacks: still only to complete** (spending freely: 23% vs 33% par). One-eyed jacks: use them.
-6. Partner's chips = your chips (ignoring them: 22%, the second-biggest error after premature jacks).
+1. Can we complete a sequence now? → do it, wild jack allowed.
+2. **Enemy four that would be their SECOND (game-ending) sequence?** → block it: natural card → one-eyed jack on its best chip → wild jack if many outs.
+3. **Enemy four that would only be their FIRST sequence?** → block it only if the block also builds our line or nothing better exists. Otherwise build.
+4. **Skip blocking threes** unless they cross another enemy line.
+5. Forks and team lines, toward **open** space (corners count for the second sequence).
+6. Wild jacks only to complete. One-eyed jacks: use them. Partner's chips = yours.
+
+### 11.7 If you ever play ONE sequence to win (printed 3-team rule)
+
+3,000 games per row. Recommended agent (1:4:16:80, λ 0.5): 35.6% vs the 2v2-tuned field, 52.0% vs human-model teams. Seat 36/32/31%. Heavy defense λ 2: 26.3%. Wild jacks spent freely: 23.3%. Individualist: 22.0%. **Hard-blocking every enemy four is fine here (34.4%)**, because every four is game-ending. Blocking threes hard: 28.6%. Early center occupancy also doesn't predict winning (33–35% per ring). Raw data: `results/sequence3_log.txt`, `results/sequence3_v2_log.txt`.
 
 ---
 

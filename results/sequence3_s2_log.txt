@@ -26,3 +26,7 @@ W=(0, 1, 2, 4, 8)                                    hero 0.281±0.014 (par .333
 W=(0, 1, 4, 16, 80)                                  hero 0.307±0.015 (par .333) | next-team 0.348 far-team 0.345 draw 0.000 | by slot 0.34/0.30/0.28 | turns 75 [3000 g, 37.9s]
 W=(0, 1, 5, 25, 125)                                 hero 0.286±0.015 (par .333) | next-team 0.364 far-team 0.350 draw 0.000 | by slot 0.32/0.27/0.27 | turns 76 [3000 g, 35.5s]
 hard-block every enemy four                          hero 0.286±0.014 (par .333) | next-team 0.356 far-team 0.357 draw 0.001 | by slot 0.32/0.28/0.25 | turns 86 [3000 g, 40.0s]
+hard-block threes and fours                          hero 0.250±0.014 (par .333) | next-team 0.377 far-team 0.371 draw 0.002 | by slot 0.27/0.26/0.22 | turns 93 [3000 g, 41.6s]
+individualist (ignores partner)                      hero 0.240±0.014 (par .333) | next-team 0.399 far-team 0.360 draw 0.001 | by slot 0.26/0.25/0.22 | turns 85 [3000 g, 44.0s]
+tunnel vision                                        hero 0.275±0.014 (par .333) | next-team 0.358 far-team 0.367 draw 0.000 | by slot 0.31/0.27/0.25 | turns 71 [3000 g, 35.1s]
+premature jacks                                      hero 0.232±0.014 (par .333) | next-team 0.382 far-team 0.385 draw 0.000 | by slot 0.27/0.21/0.21 | turns 80 [3000 g, 34.9s]

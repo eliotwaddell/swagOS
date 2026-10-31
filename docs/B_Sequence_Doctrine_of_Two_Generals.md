@@ -1,6 +1,6 @@
 # Document B — Sequence: The Doctrine of Two Generals
 
-*A technical analysis and 2v2 tactical guide, built on a rules-checked simulator and about 60,000 simulated games.*
+*A technical analysis and 2v2 tactical guide (plus 2v2v2 in Part II, §11), built on a rules-checked simulator and about 140,000 simulated games.*
 
 ---
 
@@ -241,7 +241,93 @@ Looks threatening; isn't. Check the discard pile before spending defense on it.
 
 ---
 
-## 11. Reproduce
+## 11. Part II — 2v2v2 (three teams of two)
+
+### 11.1 Rules and setup
+Official 3-team rules: **6 players seated A-B-C-A-B-C, 5 cards each, ONE sequence wins.** Everything else (jacks, corners, dead cards, no table talk) is unchanged. The engine now takes `n_teams=3` and passes its own rule tests (`test_three_team` in `sequence/test_engine.py`), and the 2v2 results reproduce exactly after the refactor.
+
+**Protocol.** Every shuffle is played 3 times, with the hero team in seating slot 1, 2 and 3; two villain teams fill the other slots. **Par = 33.3%.** 1,000 shuffles = 3,000 games per comparison; CIs over shuffles. Opponents are the best 2v2 agent unless noted. `python -m sequence.three_team 1000 all`, `python -m sequence.three_team_v2 1000`, `python -m sequence.positional 4000 3`.
+
+### 11.2 Headline results
+
+| Change (vs a field of the 2v2-tuned agent) | Hero win rate (par 33.3%) |
+|---|---|
+| **2v2v2 recommended** (line weights 1:4:16:80, denial weight 0.5, wild jacks only to complete) | **35.6% ± 1.3** |
+| Same agent vs a field of human-model teams | **52.0% ± 1.7** |
+| 2v2-tuned agent vs human-model teams | 53.3% ± 1.7 |
+| Human model vs 2v2-tuned teams | 16.1% ± 1.3 |
+| **Wild jacks spent freely** (cost 0) | **23.3% ± 1.3** |
+| Wild jacks "cost 12" (use when moderately useful) | 26.6% ± 1.3 |
+| One-eyed jacks hoarded (cost 100) | 27.8% ± 1.0 |
+| **Individualist (ignores partner's chips)** | **22.0% ± 1.3** |
+| Tunnel vision | 28.8% ± 1.3 |
+| Hard-block every enemy three and four | 28.6% ± 1.3 |
+| Hard-block enemy fours only | 34.4% ± 1.1 (fine) |
+| Flat line weights 1:2:4:8 (no fork-seeking) | 23.3% ± 1.3 |
+
+### 11.3 What changes from 2v2 — defense is a shared burden
+
+Denial weight λ against **both** opponents:
+
+| λ | 0 | 0.25 | **0.5** | 1.0 | 1.5 | 2.0 |
+|---|---|---|---|---|---|---|
+| Win % | 31.7 | 33.6 | **35.0** | 31.5 | 27.9 | 26.3 |
+
+The best defense level is **lower than in 2v2** (0.5 vs 0.75–1.0), and heavy defense costs much more: −7 points at λ = 2. Every turn you spend blocking team B benefits team C as much as you. **Block only what would otherwise win; let the other team share the work.**
+
+**Which opponent to defend against?** Splitting the denial weight by turn order (the team that moves right after you = *next*, the other = *far*):
+
+| λ next / λ far | Hero | Next team wins | Far team wins |
+|---|---|---|---|
+| 0.5 / 0.5 (uniform) | 35.0% | 32.3% | 32.8% |
+| 1.0 / 0.25 | 33.5% | **24.5%** | **42.0%** |
+| 0.75 / 0.25 | 34.8% | 26.6% | 38.6% |
+| 0.5 / 1.0 | 32.0% | **39.4%** | **28.7%** |
+
+Focusing on one opponent barely changes *your* win rate. It mainly hands the game to the opponent you ignore. Defend against whoever is closer to winning, not whoever sits next to you. Within that, a slight tilt toward the *next* team is never worse (1.0/0.5: 34.1% vs 0.5/1.0: 32.0%).
+
+### 11.4 Threat arithmetic with 5-card hands
+
+| Unseen cards U | 1 out | 2 | 3 | 4 | 5 | 6 outs |
+|---|---|---|---|---|---|---|
+| **One specific enemy can complete** — U=95 | 5% | 10% | 15% | 20% | 24% | 28% |
+| U=65 | 8% | 15% | 22% | 28% | 34% | 39% |
+| **Either of the 2 enemies moving before your partner** — U=95 | 11% | 20% | 29% | 36% | 43% | 50% |
+| U=65 | 15% | 29% | 40% | 50% | 58% | 65% |
+| **Any of the 4 enemy turns before your own next turn** — U=95 | 21% | 38% | 51% | 62% | 70% | 77% |
+| U=65 | 31% | 52% | 68% | 78% | 85% | 90% |
+
+Turn order A1 → B1 → C1 → A2 → B2 → C2: **two enemy turns pass between you and your partner, and four before you move again.** An open four left alive for a full round is completed more often than not. Since one sequence wins, *every* live open four is a game-ending threat. The enemy fours are the one thing you must block (the "hard-block fours" variant was neutral to slightly positive). Threes are not.
+
+**The free-rider rule.** If team C has an open four and team B moves before you, B may block it for you (B loses too if C wins). If B has the card, they will. **But count on it only when C's four has few outs and you have something better to do.** The analytic table says B holds a specific single card only 5–8% of the time.
+
+### 11.5 Seat order
+In the mirror match, the team moving first won **36%**, second **32%**, third **31%**. Seat advantage is real but small. Rotate the first dealer if you keep a running tally.
+
+### 11.6 Board value in 2v2v2
+
+| Ring | % in the winning sequence | Team win rate when holding the square at ply 16 |
+|---|---|---|
+| 0 (edge) | 2.7% | 34.6% |
+| 1 | 3.5% | 35.2% |
+| 2 | 7.1% | 33.0% |
+| 3 | 8.9% | 33.5% |
+| 4 (center) | 11.5% | 33.9% |
+
+(3,870 decided games.) The center still hosts the winning line most often (lines-through-square correlation r = 0.92). But **early central occupancy no longer predicts winning**: with three teams crowding the middle, it gets blocked in all directions. Winning lines are more often half-in, half-out, wherever space opens. **Practical shift: in 2v2v2, prefer the square with the most *still-open* lines through it, not the geometrically central one.** A ring-2 square with no enemy chips nearby beats a contested center square.
+
+### 11.7 2v2v2 doctrine (differences from 2v2 in bold)
+
+1. Can we complete our (single) sequence now? → do it, wild jack allowed.
+2. Any enemy open four with live outs? → block it (natural card → one-eyed jack on its best chip → wild jack if many outs). **Both enemy teams' fours are lethal: one sequence ends the game.**
+3. **Skip blocking threes** unless they cross another enemy line. **Your block helps the third team as much as you.**
+4. Build forks and extend the team's best line toward **open space**, not toward the crowded center.
+5. **Wild jacks: still only to complete** (spending freely: 23% vs 33% par). One-eyed jacks: use them.
+6. Partner's chips = your chips (ignoring them: 22%, the second-biggest error after premature jacks).
+
+---
+
+## 12. Reproduce
 
 ```
 python -m sequence.test_engine          # rules validation

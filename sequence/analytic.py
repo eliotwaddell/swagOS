@@ -22,3 +22,14 @@ if __name__ == "__main__":
     print("\nP(either of 2 opponents holds >=1 of m outs) (approx, 12 hidden cards):")
     for U in (90, 75, 60):
         print(f"  U={U:3d}  | " + "  ".join(f"{1 - comb(U - m, 12) / comb(U, 12):.2f}" for m in range(1, 7)))
+
+    print("\n=== 2v2v2 (5-card hands) ===")
+    print("P(one specific opponent holds >=1 of m outs), hand=5")
+    for U in (95, 80, 65, 50):
+        print(f"  U={U:3d}  | " + "  ".join(f"{p_hold(U, m, 5):.2f}" for m in range(1, 7)))
+    print("Between your turn and your partner's, TWO enemies move (next team, then far team): 10 hidden cards")
+    for U in (95, 80, 65, 50):
+        print(f"  U={U:3d}  | " + "  ".join(f"{1 - comb(U - m, 10) / comb(U, 10):.2f}" for m in range(1, 7)))
+    print("Until your own next turn, FOUR enemy turns pass (20 hidden cards, ignoring draws)")
+    for U in (95, 80, 65):
+        print(f"  U={U:3d}  | " + "  ".join(f"{1 - comb(U - m, 20) / comb(U, 20):.2f}" for m in range(1, 7)))

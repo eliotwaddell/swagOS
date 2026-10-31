@@ -1,4 +1,4 @@
-"""Sequence engine, official 2-team rules (Jax):
+"""Sequence engine, official Jax rules for 2 or 3 teams (3 teams: 6 players A,B,C,A,B,C, 5 cards, 1 sequence wins):
  * 4 players, seats alternate teams (A,B,A,B); 6 cards each; two 52-card decks (104 cards).
  * Turn: (optionally turn in ONE dead card and draw a replacement), play a card, place/remove chip, draw.
  * Two-eyed jacks (JD, JC): place a chip on any empty space. One-eyed jacks (JS, JH): remove one
@@ -10,14 +10,18 @@
 import random
 from .board import BOARD, POS, WINDOWS, WINDOWS_THROUGH, CORNER_IDX, CARDS, TWO_EYED, ONE_EYED, N
 
-EMPTY, CORNER = -1, 2
+EMPTY, CORNER = -1, 9
 
 
 class Game:
-    def __init__(self, rng, n_players=4, hand_size=None, seqs_to_win=2):
+    def __init__(self, rng, n_players=4, hand_size=None, seqs_to_win=None, n_teams=2):
         self.rng = rng
         self.np = n_players
-        self.team_of = [i % 2 for i in range(n_players)]
+        assert n_players % n_teams == 0
+        self.n_teams = n_teams
+        self.team_of = [i % n_teams for i in range(n_players)]
+        if seqs_to_win is None:
+            seqs_to_win = 2 if n_teams == 2 else 1   # official: 2 teams need 2, 3 teams need 1
         hs = hand_size or {2: 7, 3: 6, 4: 6, 6: 5, 8: 4, 9: 4, 10: 3, 12: 3}[n_players]
         self.deck = CARDS * 2
         rng.shuffle(self.deck)
@@ -28,13 +32,13 @@ class Game:
         for x in CORNER_IDX:
             self.cells[x] = CORNER
         self.locked = [False] * (N * N)
-        self.seqs = [[], []]                 # list of frozenset windows per team
+        self.seqs = [[] for _ in range(n_teams)]                 # list of frozenset windows per team
         self.seqs_to_win = seqs_to_win
         self.turn = 0
         self.player = 0
         self.winner = None
         self.history = []                    # (seat, card, kind, cell)
-        self.first_seq_turn = [None, None]
+        self.first_seq_turn = [None] * n_teams
 
     # ---------------------------------------------------------------- queries
     def is_dead(self, card):
@@ -59,7 +63,7 @@ class Game:
             elif card in ONE_EYED:
                 for x in range(N * N):
                     v = self.cells[x]
-                    if v in (0, 1) and v != t and not self.locked[x]:
+                    if 0 <= v < self.n_teams and v != t and not self.locked[x]:
                         mv.append((card, "remove", x))
             else:
                 for x in POS[card]:
@@ -105,7 +109,8 @@ class Game:
         assert seat == self.player and self.winner is None
         assert card in self.hands[seat]
         if kind == "remove":
-            assert card in ONE_EYED and self.cells[x] == 1 - t and not self.locked[x]
+            v = self.cells[x]
+            assert card in ONE_EYED and 0 <= v < self.n_teams and v != t and not self.locked[x]
             self.cells[x] = EMPTY
             self.owner[x] = -1
         else:
@@ -133,8 +138,8 @@ class Game:
         self.player = (self.player + 1) % self.np
 
 
-def play_game(agents, rng, max_turns=400, observer=None):
-    g = Game(rng, n_players=len(agents))
+def play_game(agents, rng, max_turns=400, observer=None, n_teams=2):
+    g = Game(rng, n_players=len(agents), n_teams=n_teams)
     for a in agents:
         if hasattr(a, "reset"):
             a.reset()

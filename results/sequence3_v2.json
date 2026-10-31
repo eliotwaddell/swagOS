@@ -1,0 +1,366 @@
+[
+ {
+  "label": "T3a: W 1:4:16:80, lam .5 vs tuned2v2",
+  "hero": {
+   "W": [
+    0,
+    1,
+    4,
+    16,
+    80,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.5
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 3000,
+  "win_rate": 0.356,
+  "ci95": 0.013063003824287803,
+  "next_team_win": 0.32766666666666666,
+  "far_team_win": 0.31633333333333336,
+  "draws": 0.0,
+  "hero_win_by_slot": [
+   0.385,
+   0.368,
+   0.315
+  ],
+  "mean_turns": 35.81733333333333,
+  "secs": 22.2
+ },
+ {
+  "label": "T3b: W 1:4:16:80, lam .5, hard-block 4s vs tuned2v2",
+  "hero": {
+   "W": [
+    0,
+    1,
+    4,
+    16,
+    80,
+    0
+   ],
+   "W_opp": [
+    0,
+    1,
+    4,
+    16,
+    250,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.5
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 3000,
+  "win_rate": 0.34633333333333327,
+  "ci95": 0.013323754176608481,
+  "next_team_win": 0.335,
+  "far_team_win": 0.31866666666666665,
+  "draws": 0.0,
+  "hero_win_by_slot": [
+   0.371,
+   0.357,
+   0.311
+  ],
+  "mean_turns": 38.077333333333335,
+  "secs": 21.3
+ },
+ {
+  "label": "T3c: W 1:3:9:27, lam_next .75 lam_far .25 vs tuned2v2",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam_next": 0.75,
+   "lam_far": 0.25
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 3000,
+  "win_rate": 0.348,
+  "ci95": 0.012124719202896306,
+  "next_team_win": 0.266,
+  "far_team_win": 0.386,
+  "draws": 0.0,
+  "hero_win_by_slot": [
+   0.366,
+   0.352,
+   0.326
+  ],
+  "mean_turns": 35.415,
+  "secs": 21.1
+ },
+ {
+  "label": "T3d: W 1:4:16:80, lam_next .75 lam_far .35, hard-block 4s vs tuned2v2",
+  "hero": {
+   "W": [
+    0,
+    1,
+    4,
+    16,
+    80,
+    0
+   ],
+   "W_opp": [
+    0,
+    1,
+    4,
+    16,
+    250,
+    0
+   ],
+   "jack2": 100,
+   "lam_next": 0.75,
+   "lam_far": 0.35
+  },
+  "villain": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.75
+  },
+  "games": 3000,
+  "win_rate": 0.34833333333333333,
+  "ci95": 0.013601395932206294,
+  "next_team_win": 0.281,
+  "far_team_win": 0.37066666666666664,
+  "draws": 0.0,
+  "hero_win_by_slot": [
+   0.377,
+   0.355,
+   0.313
+  ],
+  "mean_turns": 37.60733333333334,
+  "secs": 21.2
+ },
+ {
+  "label": "T3a: W 1:4:16:80, lam .5 vs human",
+  "hero": {
+   "W": [
+    0,
+    1,
+    4,
+    16,
+    80,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.5
+  },
+  "villain": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "games": 3000,
+  "win_rate": 0.5203333333333332,
+  "ci95": 0.016540045560747285,
+  "next_team_win": 0.22666666666666666,
+  "far_team_win": 0.253,
+  "draws": 0.0,
+  "hero_win_by_slot": [
+   0.528,
+   0.534,
+   0.499
+  ],
+  "mean_turns": 45.022666666666666,
+  "secs": 15.8
+ },
+ {
+  "label": "T3b: W 1:4:16:80, lam .5, hard-block 4s vs human",
+  "hero": {
+   "W": [
+    0,
+    1,
+    4,
+    16,
+    80,
+    0
+   ],
+   "W_opp": [
+    0,
+    1,
+    4,
+    16,
+    250,
+    0
+   ],
+   "jack2": 100,
+   "lam": 0.5
+  },
+  "villain": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "games": 3000,
+  "win_rate": 0.5086666666666666,
+  "ci95": 0.01616172808242255,
+  "next_team_win": 0.229,
+  "far_team_win": 0.2623333333333333,
+  "draws": 0.0,
+  "hero_win_by_slot": [
+   0.518,
+   0.529,
+   0.479
+  ],
+  "mean_turns": 48.989666666666665,
+  "secs": 17.0
+ },
+ {
+  "label": "T3c: W 1:3:9:27, lam_next .75 lam_far .25 vs human",
+  "hero": {
+   "W": [
+    0,
+    1,
+    3,
+    9,
+    27,
+    0
+   ],
+   "jack2": 100,
+   "lam_next": 0.75,
+   "lam_far": 0.25
+  },
+  "villain": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "games": 3000,
+  "win_rate": 0.5216666666666667,
+  "ci95": 0.01686614439718891,
+  "next_team_win": 0.175,
+  "far_team_win": 0.30333333333333334,
+  "draws": 0.0,
+  "hero_win_by_slot": [
+   0.563,
+   0.512,
+   0.49
+  ],
+  "mean_turns": 44.340666666666664,
+  "secs": 17.7
+ },
+ {
+  "label": "T3d: W 1:4:16:80, lam_next .75 lam_far .35, hard-block 4s vs human",
+  "hero": {
+   "W": [
+    0,
+    1,
+    4,
+    16,
+    80,
+    0
+   ],
+   "W_opp": [
+    0,
+    1,
+    4,
+    16,
+    250,
+    0
+   ],
+   "jack2": 100,
+   "lam_next": 0.75,
+   "lam_far": 0.35
+  },
+  "villain": {
+   "jack2": 0,
+   "jack1": 0,
+   "W_opp": [
+    0,
+    0,
+    0,
+    4,
+    80,
+    0
+   ],
+   "individualist": true,
+   "noise": 3.0
+  },
+  "games": 3000,
+  "win_rate": 0.507,
+  "ci95": 0.016400998577963306,
+  "next_team_win": 0.19766666666666666,
+  "far_team_win": 0.295,
+  "draws": 0.0003333333333333333,
+  "hero_win_by_slot": [
+   0.527,
+   0.514,
+   0.48
+  ],
+  "mean_turns": 49.364333333333335,
+  "secs": 17.0
+ }
+]

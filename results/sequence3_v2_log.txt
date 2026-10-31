@@ -1,0 +1,8 @@
+T3a: W 1:4:16:80, lam .5 vs tuned2v2                 hero 0.356±0.013 (par .333) | next-team 0.328 far-team 0.316 draw 0.000 | by slot 0.39/0.37/0.32 | turns 36 [3000 g, 22.2s]
+T3b: W 1:4:16:80, lam .5, hard-block 4s vs tuned2v2  hero 0.346±0.013 (par .333) | next-team 0.335 far-team 0.319 draw 0.000 | by slot 0.37/0.36/0.31 | turns 38 [3000 g, 21.3s]
+T3c: W 1:3:9:27, lam_next .75 lam_far .25 vs tuned2v2 hero 0.348±0.012 (par .333) | next-team 0.266 far-team 0.386 draw 0.000 | by slot 0.37/0.35/0.33 | turns 35 [3000 g, 21.1s]
+T3d: W 1:4:16:80, lam_next .75 lam_far .35, hard-block 4s vs tuned2v2 hero 0.348±0.014 (par .333) | next-team 0.281 far-team 0.371 draw 0.000 | by slot 0.38/0.35/0.31 | turns 38 [3000 g, 21.2s]
+T3a: W 1:4:16:80, lam .5 vs human                    hero 0.520±0.017 (par .333) | next-team 0.227 far-team 0.253 draw 0.000 | by slot 0.53/0.53/0.50 | turns 45 [3000 g, 15.8s]
+T3b: W 1:4:16:80, lam .5, hard-block 4s vs human     hero 0.509±0.016 (par .333) | next-team 0.229 far-team 0.262 draw 0.000 | by slot 0.52/0.53/0.48 | turns 49 [3000 g, 17.0s]
+T3c: W 1:3:9:27, lam_next .75 lam_far .25 vs human   hero 0.522±0.017 (par .333) | next-team 0.175 far-team 0.303 draw 0.000 | by slot 0.56/0.51/0.49 | turns 44 [3000 g, 17.7s]
+T3d: W 1:4:16:80, lam_next .75 lam_far .35, hard-block 4s vs human hero 0.507±0.016 (par .333) | next-team 0.198 far-team 0.295 draw 0.000 | by slot 0.53/0.51/0.48 | turns 49 [3000 g, 17.0s]

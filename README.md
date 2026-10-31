@@ -6,7 +6,7 @@ Computational strategy for **Oh Hell** and **2v2 Sequence**: rules-checked simul
 | Doc | What |
 |---|---|
 | [docs/A_OhHell_Art_of_Exact_Victory.md](docs/A_OhHell_Art_of_Exact_Victory.md) | Oh Hell technical analysis + field manual |
-| [docs/B_Sequence_Doctrine_of_Two_Generals.md](docs/B_Sequence_Doctrine_of_Two_Generals.md) | Sequence technical analysis + 2v2 tactical guide |
+| [docs/B_Sequence_Doctrine_of_Two_Generals.md](docs/B_Sequence_Doctrine_of_Two_Generals.md) | Sequence technical analysis + 2v2 tactical guide; Part II (§11) covers 2v2v2 |
 | [docs/C_Cabin_Conquest_Cheat_Sheet.md](docs/C_Cabin_Conquest_Cheat_Sheet.md) | **The 10-minute cheat sheet** |
 | [NOTES.md](NOTES.md) | Progress notes, open questions, next experiments |
 
@@ -15,7 +15,7 @@ Computational strategy for **Oh Hell** and **2v2 Sequence**: rules-checked simul
 ohhell/    engine.py (rules), agents.py (bidders/players incl. Monte Carlo + PIMC), experiments.py (harness),
            run_ladder.py, run_round2.py, diagnostics.py, examples.py, test_engine.py
 sequence/  board.py (real Jax board), engine.py (rules), agents.py (evaluators, Monte Carlo), experiments.py,
-           run_all.py, run_v2.py, run_v3.py, positional.py, analytic.py, test_engine.py
+           run_all.py, run_v2.py, run_v3.py, three_team.py + three_team_v2.py (2v2v2), positional.py, analytic.py, test_engine.py
 results/   raw JSON + logs of every experiment cited in the docs
 ```
 

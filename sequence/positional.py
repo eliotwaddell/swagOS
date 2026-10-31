@@ -26,23 +26,26 @@ def combinatorial():
     return win, win_w
 
 
-def _w(seeds):
+def _w(args):
+    seeds, nt = args
     in_seq = np.zeros(N * N); occ_win = np.zeros((N * N, 2)); occ_n = np.zeros((N * N, 2)); games = 0
     for s in seeds:
         snap = {}
         def obs(g):
             if g.turn == T_SNAP:
                 snap["cells"] = list(g.cells)
-        g = play_game([Greedy(seed=s * 4 + i) for i in range(4)], random.Random(s), observer=obs)
+        np_ = 4 if nt == 2 else 6
+        kw = {} if nt == 2 else dict(W=(0, 1, 3, 9, 27, 0), jack2=100, lam=0.75)
+        g = play_game([Greedy(seed=s * np_ + i, **kw) for i in range(np_)], random.Random(s), observer=obs, n_teams=nt)
         if g.winner is None or "cells" not in snap:
             continue
         games += 1
-        for t in (0, 1):
+        for t in range(nt):
             for sq in g.seqs[t]:
                 for y in sq:
                     in_seq[y] += 1
         for y, v in enumerate(snap["cells"]):
-            if v in (0, 1):
+            if 0 <= v < nt:
                 # occupant v won?
                 occ_n[y, 0] += 1
                 occ_win[y, 0] += (g.winner == v)
@@ -51,10 +54,12 @@ def _w(seeds):
 
 if __name__ == "__main__":
     G = int(sys.argv[1]) if len(sys.argv) > 1 else 4000
+    NT = int(sys.argv[2]) if len(sys.argv) > 2 else 2
+    tag = "" if NT == 2 else "3team_"
     win, win_w = combinatorial()
     chunks = [list(range(k, G, 16)) for k in range(16)]
     with Pool(4) as p:
-        parts = p.map(_w, chunks)
+        parts = p.map(_w, [(c, NT) for c in chunks])
     in_seq = sum(x[0] for x in parts); occ_win = sum(x[1] for x in parts)[:, 0]; occ_n = sum(x[2] for x in parts)[:, 0]
     games = sum(x[3] for x in parts)
     p_in = (in_seq / games).reshape(N, N)
@@ -72,7 +77,7 @@ if __name__ == "__main__":
     res = dict(games=games, snapshot_ply=T_SNAP, windows=win.tolist(), windows_corner_weighted=win_w.tolist(),
                p_in_sequence=p_in.tolist(), occupancy_win_rate=lift.tolist(), occupancy_se=lift_se.tolist(),
                corr_windows_vs_pinseq=corr_w, corr_cornerweighted_vs_pinseq=corr_ww, cards=cards)
-    json.dump(res, open("results/sequence_positional.json", "w"), indent=1)
+    json.dump(res, open(f"results/sequence_{tag}positional.json", "w"), indent=1)
     np.set_printoptions(precision=2, suppress=True, linewidth=150)
     print("games", games)
     print("windows through square:\n", win.astype(int))

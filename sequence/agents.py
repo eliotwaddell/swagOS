@@ -51,8 +51,11 @@ class Greedy:
     """
 
     def __init__(self, lam=1.0, W=DEFAULT_W, W_opp=None, jack2=12.0, jack1=12.0, individualist=False,
-                 tunnel=False, noise=0.0, seed=None, name=None):
+                 tunnel=False, noise=0.0, seed=None, name=None, lam_next=None, lam_far=None):
         self.lam, self.W, self.W_opp = lam, W, (W_opp or W)
+        # 3-team games: separate denial weights for the team that moves right after us (next) and the other (far)
+        self.lam_next = lam if lam_next is None else lam_next
+        self.lam_far = lam if lam_far is None else lam_far
         self.jack2, self.jack1 = jack2, jack1
         self.individualist, self.tunnel, self.noise = individualist, tunnel, noise
         self.rng = random.Random(seed)
@@ -61,10 +64,12 @@ class Greedy:
     def score_move(self, g, seat, move):
         card, kind, x = move
         t = g.team_of[seat]
-        o = 1 - t
+        nt = g.n_teams
+        opps = [(t + k) % nt for k in range(1, nt)]          # in turn order: opps[0] moves next
+        lams = [self.lam] if nt == 2 else [self.lam_next, self.lam_far]
         own_seat = seat if self.individualist else None
         before_t = local_value(g, x, t, self.W, own_seat)
-        before_o = local_value(g, x, o, self.W_opp)
+        before_o = [local_value(g, x, o, self.W_opp) for o in opps]
         old = g.cells[x]
         old_owner = g.owner[x]
         bonus = 0.0
@@ -78,10 +83,12 @@ class Greedy:
                 got = min(len(ns), g.seqs_to_win - len(g.seqs[t]))
                 bonus += 1e6 if len(g.seqs[t]) + got >= g.seqs_to_win else 2000.0 * got
         after_t = local_value(g, x, t, self.W, own_seat)
-        after_o = local_value(g, x, o, self.W_opp)
+        after_o = [local_value(g, x, o, self.W_opp) for o in opps]
         g.cells[x] = old
         g.owner[x] = old_owner
-        s = (after_t - before_t) - self.lam * (after_o - before_o) + bonus
+        s = (after_t - before_t) + bonus
+        for lm, a, b in zip(lams, after_o, before_o):
+            s -= lm * (a - b)
         if kind == "wild":
             s -= self.jack2
         elif kind == "remove":
@@ -207,8 +214,9 @@ class MonteCarlo:
                 else:
                     jt = sum(1 for q in range(h.np) for c in h.hands[q] if c in TWO_EYED and h.team_of[q] == t)
                     jo = sum(1 for q in range(h.np) for c in h.hands[q] if c in TWO_EYED and h.team_of[q] != t)
-                    v += (1000 * (len(h.seqs[t]) - len(h.seqs[1 - t])) + total_value(h, t, self.base.W)
-                          - total_value(h, 1 - t, self.base.W) + self.jack_value * (jt - jo))
+                    others = [o for o in range(h.n_teams) if o != t]
+                    v += (1000 * (len(h.seqs[t]) - max(len(h.seqs[o]) for o in others)) + total_value(h, t, self.base.W)
+                          - sum(total_value(h, o, self.base.W) for o in others) + self.jack_value * (jt - jo))
             if v > bv:
                 best, bv = m, v
         return best
